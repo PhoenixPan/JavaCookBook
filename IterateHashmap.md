@@ -38,3 +38,7 @@ public static void printMap(Map map) {
     }
 }
 ```
+
+http://www.sergiy.ca/how-to-iterate-over-a-map-in-java
+
+http://stackoverflow.com/questions/1066589/iterate-through-a-hashmap
