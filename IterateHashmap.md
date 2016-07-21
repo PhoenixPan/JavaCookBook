@@ -29,12 +29,12 @@ for (Map.Entry<String, Object> entry : map.entrySet()) {
 If you want to remove items mid-iteration, you'll need to do so via an Iterator
 
 ```
-public static void printMap(Map mp) {
-    Iterator it = mp.entrySet().iterator();
+public static void printMap(Map map) {
+    Iterator it = map.entrySet().iterator();
     while (it.hasNext()) {
         Map.Entry pair = (Map.Entry)it.next();
         System.out.println(pair.getKey() + " = " + pair.getValue());
-        it.remove(); // avoids a ConcurrentModificationException
+        it.remove(); // avoids a ConcurrentModificationException, not reusable
     }
 }
 ```
