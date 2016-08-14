@@ -12,14 +12,14 @@ Some say “In Java, Objects are passed by reference, and primitives are passed 
 This does not change the original StringBuilder
 ```
 static void foo(StringBuilder builder) {
-    builder = new StringBuilder("ipad"); // refer to a new location
-    builder.append("4"); // change on new location
+    builder = new StringBuilder("ipad");    // refer to a new location
+    builder.append("4");                    // change on new location
 }
 ```
 But this will
 ```
 static void foo(StringBuilder builder) {
-    builder.append("4");
+    builder.append("4");                    // operate on original StringBuilder
 }
 ```
 
