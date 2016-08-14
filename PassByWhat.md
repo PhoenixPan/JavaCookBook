@@ -1,5 +1,5 @@
 
-#####In short: Java has pointers and is strictly pass-by-value.   
+##In short: Java has pointers and is strictly pass-by-value.   
 1. Pass-by-value: The actual parameter is fully evaluated and the resulting value is copied into a location being used to hold the formal parameter's value during method/function execution;  
 2. Pass-by-reference: The formal parameter merely acts as an alias for the actual parameter. Anytime the method/function uses the formal parameter, it is actually using the actual parameter.  
 
