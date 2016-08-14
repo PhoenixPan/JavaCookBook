@@ -6,10 +6,7 @@
 Some say “In Java, Objects are passed by reference, and primitives are passed by value.” However, Objects are not passed by reference. A correct statement would be __Object references are passed by value__
 
 
-
-
-
-This does not change the original StringBuilder
+For example, this does not change the original StringBuilder
 ```
 static void foo(StringBuilder builder) {
     builder = new StringBuilder("ipad");    // refer to a new location
