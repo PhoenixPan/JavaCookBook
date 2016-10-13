@@ -21,7 +21,6 @@ static void foo(StringBuilder builder) {
 ```
   
   
-  
 Though changes on ArrayList elements inside or outsiede should have the same effect, but not in cases of not-yet-initialized objects:
 
 ```
