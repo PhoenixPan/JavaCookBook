@@ -1,9 +1,6 @@
 ## Comparable
 ```
-package comparableAndComparator;
-
 public class _Comparable implements Comparable {
-	
 	
 	@Override
 	public int compareTo(Object o) {
