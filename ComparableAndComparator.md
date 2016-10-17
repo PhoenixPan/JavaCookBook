@@ -25,9 +25,9 @@ class Car  {
 	
 }
 
-class CarComparator implements Comparator<Car> { ///////------------------------------------------------------
+class CarComparator implements Comparator<Car> { 
 	@Override
-	public int compare(Car c1, Car c2) { ///// have to be the same class as declared above
+	public int compare(Car c1, Car c2) { // have to be the same class as declared above
 		if(c1.weight > c2.weight)
 			return 1;
 		else if (c1.weight == c2.weight)
