@@ -1,13 +1,19 @@
 ## Comparable
 ```
-public class _Comparable implements Comparable {
+public class ComparableDemo implements Comparable<ComparableDemo> {
+	
+	private int element = 0;
 	
 	@Override
-	public int compareTo(Object o) {
-		return 0;
+	public int compareTo(ComparableDemo o) {
+		if (this.element > o.element)
+			return 1;
+		else if (this.element == o.element)
+			return 0;
+		else
+			return -1;
 	}
 }
-
 ```
 
 ## Comparator
