@@ -62,12 +62,19 @@ Use two bits to represent three (more than two) situation:
 ##### Given a number x, how to set x's k-th bit to 1?
 xxxx Kxxx  
 0000 1000  
+temp = temp ^ k  
 ```
 int change(int x, int k) {
-    int temp = x;
-    for(int i = 0; i < k; i++) {
-        temp = temp / 2;
-    }
-    
+    return x | (1<<k);    
+}
+```
+##### Given a number x, how to set x's k-th bit to 0?
+xxxx Kxxx  
+1111 0111  (~0000 1000， invert)
+temp = 2^n - 2^k  
+~ 
+```
+int change(int x, int k) {
+    return x & (~(1<<k));    
 }
 ```
