@@ -35,22 +35,23 @@ Why negative has one more value?
 11000011 && 10101010? 10000010: only 1 && 1 = 1  
 11000011 || 10101010? 11101011:      x || 0 = x  
 
-## Left shift
-int a = 10000001
-a = a * 2
-move left and append a 0 at right, don't worry about sign digit
-a << 1  00000010
+## Left shift  
+int a = 10000001  
+a = a * 2  
+move left and append a 0 at right, don't worry about sign digit  
+a << 1  00000010  
 
-## Right shift >>
-int a = 011100101
+## Right shift >>  
+int a = 011100101  
 a = a / 2
-move right and append a 0 at left, sign bit would be the same as before
-a >> 1  001110010
-a >> 2  000111001
+move right and append a 0 at left, sign bit would be the same as before  
+a >> 1  001110010  
+a >> 2  000111001  
 
-## Unsigned right shift >>>
-move right and append a 0 at left, ignore sign bit
-a >>> 1
+## Unsigned right shift >>>  
+move right and append a 0 at left, ignore sign bit  
+a >>> 1  
+Notice: for this operation, the bit sign will be counted towards a regular bit, which may make a negative number a huge positive integer  
 
 ## How to use?  
 use an integer to replace an array of booleans to represent situation:  
