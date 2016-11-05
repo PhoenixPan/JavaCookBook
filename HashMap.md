@@ -1,3 +1,14 @@
+## hashCode()
+Default implementation: memory address in integer value   
+
+## equals()
+```
+public boolean equals(Object obj) {
+    return (this == obj);
+}
+```
+
+
 
 Sort an HashMap using its value  
 ```
