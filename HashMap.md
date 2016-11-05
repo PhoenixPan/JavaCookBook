@@ -7,6 +7,8 @@ public boolean equals(Object obj) {
     return (this == obj);
 }
 ```
+## ==
+Returns true if and only if both variables refer to the same object, if their references are one and the same.
 
 
 
