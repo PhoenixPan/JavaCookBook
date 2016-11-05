@@ -1,29 +1,38 @@
-If **one.equals(two)**, **one.hashCode** must equal to **two.hashCode**  
-If one.hashCode = two.hashCode, it is **not necessary** that one.equals(two)
+# hashCode & equals functions
 
+## Basic
 
-
-## hashCode()
+### hashCode()##
 Default implementation: memory address in integer value   
 After override a hashCode() function, you can still get the original hash code by invoking:  
 ```
 int originalHashCode = System.identityHashCode(myObject);
 ```
 
-
-## equals(Object o)
+### equals(Object o)
 ```
 public boolean equals(Object obj) {
     return (this == obj);
 }
 ```
 
-
-## ==
+### ==
 Returns true if and only if both variables refer to the same object, if their references are one and the same.
 
+## Contract
+You must override hashCode() in every class that overrides equals(). Failure to do so will result in a violation of the general contract for Object.hashCode(), which will prevent your class from functioning properly in conjunction with all hash-based collections, including HashMap, HashSet, and Hashtable.  
+
+If **one.equals(two)**, **one.hashCode** must equal to **two.hashCode**   
+If one.hashCode = two.hashCode, it is **not necessary** that one.equals(two)   
+
+## Why
+Hashing retrieval is a two-step process.  
+
+Find the right bucket (using hashCode())
+Search the bucket for the right element (using equals() )
 
 When using a hash-based Collection or Map such as HashSet, LinkedHashSet, HashMap, Hashtable, or WeakHashMap, make sure that the hashCode() of the key objects that you put into the collection never changes while the object is in the collection. The bulletproof way to ensure this is to make your keys immutable, which has also other benefits.  
+
 
 
 ## HashSet example
