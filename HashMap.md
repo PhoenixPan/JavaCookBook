@@ -1,17 +1,3 @@
-## hashCode()
-Default implementation: memory address in integer value   
-
-## equals()
-```
-public boolean equals(Object obj) {
-    return (this == obj);
-}
-```
-## ==
-Returns true if and only if both variables refer to the same object, if their references are one and the same.
-
-
-
 Sort an HashMap using its value  
 ```
 import java.util.Collections;
