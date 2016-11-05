@@ -32,12 +32,13 @@ Why negative has one more value?
 "-2^31"   1000 0000 0000 0000 0000 0000 0000 0000 0000  (what is?)  
 
 
-11000011 && 10101010? 10000010
+11000011 && 10101010? 10000010: only 1 && 1 = 1  
+11000011 || 10101010? 11101011:      x || 0 = x  
 
 ## Left shift
 int a = 10000001
 a = a * 2
-move left and append a 0 at right
+move left and append a 0 at right, don't worry about sign digit
 a << 1  00000010
 
 ## Right shift >>
@@ -57,3 +58,16 @@ true true false false -> 1 1 0 0
 Three situations?   
 Use two bits to represent three (more than two) situation:    
 1 2 3 -> 00 01 10   
+
+##### Given a number x, how to set x's k-th bit to 1?
+xxxx Kxxx  
+0000 1000  
+```
+int change(int x, int k) {
+    int temp = x;
+    for(int i = 0; i < k; i++) {
+        temp = temp / 2;
+    }
+    
+}
+```
