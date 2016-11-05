@@ -50,3 +50,10 @@ a >> 2  000111001
 ## Unsigned right shift >>>
 move right and append a 0 at left, ignore sign bit
 a >>> 1
+
+## How to use?  
+use an integer to replace an array of booleans to represent situation:  
+true true false false -> 1 1 0 0    
+Three situations?   
+Use two bits to represent three (more than two) situation:    
+1 2 3 -> 00 01 10   
