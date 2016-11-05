@@ -59,7 +59,7 @@ Three situations?
 Use two bits to represent three (more than two) situation:    
 1 2 3 -> 00 01 10   
 
-##### Given a number x, how to set x's k-th bit to 1?
+##### 1.Given a number x, how to set x's k-th bit to 1?  
 xxxx Kxxx  
 0000 1000  
 temp = temp ^ k  
@@ -68,7 +68,7 @@ int change(int x, int k) {
     return x | (1<<k);    
 }
 ```
-##### Given a number x, how to set x's k-th bit to 0?
+##### 2.Given a number x, how to set x's k-th bit to 0?  
 xxxx Kxxx  
 1111 0111  (~0000 1000， invert)
 temp = 2^n - 2^k  
@@ -78,3 +78,7 @@ int change(int x, int k) {
     return x & (~(1<<k));    
 }
 ```
+##### 3. How to verify whether a number is power of two (n>=0)? 
+x   = 00001000 has only one 1  
+x-1 = 00000111   
+return (x & (x - 1) == 0 && x != 0)
