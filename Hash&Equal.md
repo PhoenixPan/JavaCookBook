@@ -27,6 +27,7 @@ When using a hash-based Collection or Map such as HashSet, LinkedHashSet, HashMa
 
 
 ## HashSet example
+HashSet checks equality based on equals() method  
 ```
 	public static void main(String[] args) {
 		Emp emp1 = new Emp(23);
