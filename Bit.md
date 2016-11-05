@@ -34,9 +34,19 @@ Why negative has one more value?
 
 11000011 && 10101010? 10000010
 
-
+## Left shift
 int a = 10000001
 a = a * 2
-a << 1  10000010
-a / 2
-a >> 1  10000001
+move left and append a 0 at right
+a << 1  00000010
+
+## Right shift >>
+int a = 011100101
+a = a / 2
+move right and append a 0 at left, sign bit would be the same as before
+a >> 1  001110010
+a >> 2  000111001
+
+## Unsigned right shift >>>
+move right and append a 0 at left, ignore sign bit
+a >>> 1
