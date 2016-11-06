@@ -23,6 +23,7 @@ public synchronized static int myMethod() {
 
 ## volatile
 No lock. Guranteed mutual exclusion from system, but looks like there is one.  
+Understanding: so fast that no one can compete.  
 volatile is good for flag variable, as the reading and writing on volatile variable are mutual exclusion.  
 
 ##### differences between volatile and lock:  
