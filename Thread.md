@@ -16,6 +16,7 @@ public synchronized int myMethod() {
   // Add a lock to the object. Equal to add a synchronized block outside the method
 }
 
+// Class is essentially an object, this lock is on class object.  
 public synchronized static int myMethod() {
   // Add a lock to the class on static method
 }
