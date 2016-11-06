@@ -1,0 +1,20 @@
+
+
+
+## start() and run()
+```
+// run in sequence in only one thread
+threadA.run();
+threadB.run();
+
+System.out.println();
+
+// run at the same time by creating two different threads
+threadA.start();
+threadB.start();
+```
+output  
+```
+0000000000000000000000000000000000000000000000000011111111111111111111111111111111111111111111111111
+0111111111111111111111111100000000000000000000000000000000000000000000000001111111111111111111111111
+```
