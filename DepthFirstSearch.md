@@ -70,7 +70,7 @@ dfs(int amountLeft, int level, int sol[]) {
 }
 ```
 
-# Q4: Given a string with non-duplicated letters, print all permutations of the string.  
+## Q4: Given a string with non-duplicated letters, print all permutations of the string.  
 e.g.:String input = "abc"     abc acb bac bca cab cba  
 Meaning of each level:   
                         abc  
@@ -93,4 +93,5 @@ void permutation (String input, int index) {  // index = level
   }
 }
 ```
+When all elements have to maintain, consider to use swap.
 # Reduce the usage of string methods (usually O(N)).
