@@ -31,7 +31,8 @@ int range[-2^31, 2^31-1] (remove 0)
 Why negative has one more value?  
 "-2^31-1" 1111 1111 1111 1111 1111 1111 1111 1111 1111   
 "-2^31"   1000 0000 0000 0000 0000 0000 0000 0000 0000  (the additional negative number)  
-  
+![minimum](https://cloud.githubusercontent.com/assets/14355257/20159085/7c3d3382-a6ac-11e6-8db7-728e722cadf9.png)
+
 11000011 && 10101010? 10000010: only 1 && 1 = 1  
 11000011 || 10101010? 11101011:      x || 0 = x  
 
