@@ -5,7 +5,7 @@
 
 
 int index = 1;  
-0000 0000 0000 0000 0000 0000 0000 0000 0001
+0000 0000 0000 0000 0000 0000 0000 0000 0001  
 int has 4 bytes, 32 bits, the first digit is sign bit (positive or negative), therefore, the maximum number we can represent is:  
 [sign] 2^0 + 2^1 + 2^2 + ... + 2^29 + 2^30  
 Totally, the limit of int is 2^31
