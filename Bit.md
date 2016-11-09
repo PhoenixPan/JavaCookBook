@@ -16,22 +16,22 @@ Totally, the limit of int is 2^31
 "-1" 1000 0000 0000 0000 0000 0000 0000 0000 0001  
 For 0, we have both +0 and -0, not good!  
   
-补码表示法(Two's complement):  
-只有负数有补码  
+Two's complement(补码表示法):  
+Why? Because we will have a positive zero and a negative zero!  
+Only negative number has complement    
 "-1" 1000 0000 0000 0000 0000 0000 0000 0000 0001  
-取反  
+flip:    
 "-1" 1111 1111 1111 1111 1111 1111 1111 1111 1110  
-加一 (-1 + 1 = 0)  
+plus one (-1 + 1 = 0):    
 " 0" 1111 1111 1111 1111 1111 1111 1111 1111 1111  
-再取反  
+flip again:    
 " 0" 0000 0000 0000 0000 0000 0000 0000 0000 0000  
 
 int range[-2^31, 2^31-1] (remove 0)   
 Why negative has one more value?  
 "-2^31-1" 1111 1111 1111 1111 1111 1111 1111 1111 1111   
-"-2^31"   1000 0000 0000 0000 0000 0000 0000 0000 0000  (what is?)  
-
-
+"-2^31"   1000 0000 0000 0000 0000 0000 0000 0000 0000  (the additional negative number)  
+  
 11000011 && 10101010? 10000010: only 1 && 1 = 1  
 11000011 || 10101010? 11101011:      x || 0 = x  
 
@@ -47,6 +47,9 @@ a = a / 2
 move right and append a 0 at left, sign bit would be the same as before  
 a >> 1  001110010  
 a >> 2  000111001  
+
+# Question: What if I changed the sign after the shift? 
+Fill the new digit with sign bit  
 
 ## Unsigned right shift (>>>)  
 move right and append a 0 at left, ignore sign bit  
