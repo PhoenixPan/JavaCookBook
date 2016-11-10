@@ -2,21 +2,21 @@
 
 ## Basic
 
-### hashCode()##
-Default implementation: memory address in integer value   
+### .hashCode()
+Default implementation: *memory address* in integer value   
 After override a hashCode() function, you can still get the original hash code by invoking:  
 ```
 int originalHashCode = System.identityHashCode(myObject);
 ```
 
-### equals(Object o)
+### .equals(Object o)
 ```
 public boolean equals(Object obj) {
     return (this == obj);
 }
 ```
 
-### ==
+### Double equal signs: ==  
 Returns true if and only if both variables refer to the same object, if their references are one and the same.
 
 ## Contract
