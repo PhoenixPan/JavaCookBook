@@ -4,6 +4,7 @@
 
 ### .hashCode()
 Default implementation: return an integer representing a *memory address*  
+Return a different hash code for distinct objects  
 After override a hashCode() function, you can still get the original hash code by invoking:  
 ```
 int originalHashCode = System.identityHashCode(myObject);
@@ -32,6 +33,14 @@ Hashing retrieval is a two-step process.
 
 When using a hash-based Collection or Map such as HashSet, LinkedHashSet, HashMap, Hashtable, or WeakHashMap, make sure that the hashCode() of the key objects that you put into the collection never changes while the object is in the collection. The bulletproof way to ensure this is to make your keys immutable, which has also other benefits.  
 
+You may have the same hash code for different objects after your implementation, 
+
+```
+// This is true in default implementation  
+Student s1 = new Student("John", 18);
+Student s2 = new Student("John", 18);
+s1.hashCode() != s2.hashCode();
+```
 
 ## HashSet example
 HashSet checks equality based on equals() method  
