@@ -3,7 +3,7 @@
 ## Basic
 
 ### .hashCode()
-Default implementation: *memory address* in integer value   
+Default implementation: return an integer representing a *memory address*  
 After override a hashCode() function, you can still get the original hash code by invoking:  
 ```
 int originalHashCode = System.identityHashCode(myObject);
