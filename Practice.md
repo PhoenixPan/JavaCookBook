@@ -1,7 +1,7 @@
 # Q1: Element dedupilication in an array  
 1. Use slow and fast pointers to distinguish processed and unprocessed elements;  
 
-
+All elements on the left side of slow pointer (inclusive) will be returned.  
 ## Q1.1: Retain one of each in a sorted array  
 ```
 public void deduplication(int[] input) {
@@ -36,8 +36,17 @@ public void deduplication(int[] input) {
 N = 2
 ```
 public void deduplication(int[] input) {
-  if (input == null || input.length <= 1)
+  if (input == null || input.length <= 2)
     return input;
-  
+    int slow = 1;
+    
+  for (int fast = 2; fast < input.length; fast++) {
+    if(input[fast] = input[fast - 2]) {
+      fast ++;
+    }
+    else {
+      input[++slow] = input[fast++]; // the result should including slow
+    }
+  }
 }
 ```
