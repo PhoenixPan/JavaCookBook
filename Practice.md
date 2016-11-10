@@ -50,3 +50,23 @@ public void deduplication(int[] input) {
   }
 }
 ```
+## Q1.3: Retain no duplication
+```
+public void deduplication(int[] input) {
+  if (input == null || input.length <= 1)
+    return input;
+  
+  int slow = 0;
+  int fast = 0;
+  while (fast < input.length) {
+    int begin = fast;
+    while(fast < input.length && input[fsat] == input[begin]) {
+      fast++;
+    }
+    if (fast - begin == 1) {
+      input[slow++] = input[begin];
+    }
+  }
+  return slow;
+}
+```
