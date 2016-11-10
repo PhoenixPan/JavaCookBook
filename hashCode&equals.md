@@ -27,12 +27,10 @@ If one.hashCode = two.hashCode, it is **not necessary** that one.equals(two)
 
 ## Why
 Hashing retrieval is a two-step process.  
-
-Find the right bucket (using hashCode())
-Search the bucket for the right element (using equals() )
+1. Find the right bucket (using hashCode())  
+2. Search the bucket for the right element (using equals() )  
 
 When using a hash-based Collection or Map such as HashSet, LinkedHashSet, HashMap, Hashtable, or WeakHashMap, make sure that the hashCode() of the key objects that you put into the collection never changes while the object is in the collection. The bulletproof way to ensure this is to make your keys immutable, which has also other benefits.  
-
 
 
 ## HashSet example
