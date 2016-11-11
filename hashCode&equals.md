@@ -109,5 +109,4 @@ HashSet Size--->>>6
 hs.contains( new Emp(25))--->>>false
 hs.remove( new Emp(24)--->>>false
 Now HashSet Size--->>>6
-6
 ```
