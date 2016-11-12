@@ -230,7 +230,7 @@ class Deck {
   
   // Use an index as a block, on the left side of which are the cards delt, one the right side of which are the cards remain
   private int dealtIndex = 0;
-  private ArrayList<Card> cards = new ArrayList<>();
+  private List<Card> cards = new ArrayList<>();
   
   
   public int remainingNumber () {
@@ -254,8 +254,23 @@ class Deck {
 
 
 class Player {
+  private List<Card> cards = new ArrayList<>();
   
+  public int getScore() {
+    int score = 0;
+    for (int i = 0; i < cards.size(); i++) {
+      score += cards.get(i).getValue();
+    }
+    return score;
+  }
   
+}
+
+class BlackJackPlayer extends Player {
+  @Override
+  public int getScore() {
+    // Apply rules of Black Jack
+  }
 }
 ```
 
