@@ -140,7 +140,9 @@ Uniformly distribution (one element in each bucket): O(4n) -> O(n)
 Worst case (all in one bucket): mergeSort, O(nlogn); insertionSortO(n^2) (Collections.sort())  
 
 
-## External Sort  
+## External Sort (I/O optimization)
+ArrayList: continuous I/O, good for I/O  
+LinkedList: random I/O, not good for I/O, but save RAM space (not useful here)  
 Disk seek: slow. Find the area storing data.  
 Disk read: fast. Disk only rotates 1~2 degrees, but the head will move in and out to read the entire area.  
 Why reduce I/O? Hard drive operations are much slower than RAM operations.  
@@ -151,4 +153,6 @@ one int = 4 bytes
 We usualy can use only half of the RAM  
 Merge: Divide the dataset to 20 pieces, each 2 Gb, and sort each chunk.   
 Sort: Read 0.1 Gb each time.  
-Optimized algorithm: 80 Gb I/O with dozens of disk seeks.  
+Optimized algorithm: 80 Gb I/O with dozens of disk seeks. 
+  
+
