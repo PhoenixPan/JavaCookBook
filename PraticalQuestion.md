@@ -153,6 +153,6 @@ one int = 4 bytes
 We usualy can use only half of the RAM  
 Merge: Divide the dataset to 20 pieces, each 2 Gb, and sort each chunk.   
 Sort: Read 0.1 Gb each time.  
-Optimized algorithm: 80 Gb I/O with dozens of disk seeks. 
+Optimized algorithm: two times data size (80 Gb I/O) wish O(1) disk seeks.  
   
 
