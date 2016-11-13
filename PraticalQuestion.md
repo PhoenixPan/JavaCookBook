@@ -109,6 +109,8 @@ for (int i = 0; i < max;i++)
 ```
 
 # Sort
+## Counting Sort
+
 ## K-sort 
 n array of n elements, where each element is at most k positions away from its regular position.  
 The efficiency is better or equal to merge sort.   
@@ -129,11 +131,24 @@ public void kSort(intp[] arr, int k) {
   }
 }
 ```
-# BucketSort  
+## Bucket Sort  
 ```
 // Code on photo
 (int)(n * d) // distribute elements to buckets 
 ```
 Uniformly distribution (one element in each bucket): O(4n) -> O(n)  
-Worst case (all in one bucket): O(n^2)  
+Worst case (all in one bucket): mergeSort, O(nlogn); insertionSortO(n^2) (Collections.sort())  
 
+
+## External Sort  
+Disk seek: slow. Find the area storing data.  
+Disk read: fast. Disk only rotates 1~2 degrees, but the head will move in and out to read the entire area.  
+Why reduce I/O? Hard drive operations are much slower than RAM operations.  
+  
+Sort 10 billion integer data with 4G RAM  
+one int = 4 bytes  
+10 b int = 40 Gb  
+We usualy can use only half of the RAM  
+Merge: Divide the dataset to 20 pieces, each 2 Gb, and sort each chunk.   
+Sort: Read 0.1 Gb each time.  
+Optimized algorithm: 80 Gb I/O with dozens of disk seeks.  
