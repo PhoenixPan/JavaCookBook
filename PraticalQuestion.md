@@ -130,5 +130,10 @@ public void kSort(intp[] arr, int k) {
 }
 ```
 # BucketSort  
-
+```
+// Code on photo
+(int)(n * d) // distribute elements to buckets 
+```
+Uniformly distribution (one element in each bucket): O(4n) -> O(n)  
+Worst case (all in one bucket): O(n^2)  
 
