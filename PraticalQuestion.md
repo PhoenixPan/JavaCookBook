@@ -108,4 +108,24 @@ for (int i = 0; i < max;i++)
       return 
 ```
 
-
+# Sort
+## K-sort 
+n array of n elements, where each element is at most k positions away from its regular position.  
+The efficiency is better or equal to merge sort.   
+Examples:  
+1 2 3   k=0  
+1 3 2   k=1  
+3 2 1   k=2  
+```
+public void kSort(intp[] arr, int k) {
+  PriorityQueue<Integer> heap = new PriorityQueue<>();
+  for (int i = 0; i <= Math.min(k, arr.length - 1); i++) {
+    heap.offer(arr[i]);
+  }
+  for (int i = 0; i < arr.length; i++) {
+    if (i + k + 1 < arr.length)
+      heap.offer(arr[i + k + 1])
+    arr[i] = heap.poll();
+  }
+}
+```
