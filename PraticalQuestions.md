@@ -180,3 +180,18 @@ Optimized algorithm: two times data size (80 Gb I/O) wish O(1) disk seeks.
     int indexFromWhichArray;  // e.g. = 3 In array A3
   }
   ```
+
+# Binary Search Tree
+1. Find (the closest value):  traverse the tree
+  * Case 1: if targetValue < currentValue -> update solution -> current = current.left
+  * Case 2: if targetValue > currentValue -> update solution -> current = current.right
+  * Case 3: if targetValue == currentValue -> return 
+2. Find (the largest element that is smaller than target):
+  * Case 1: if targetValue <= currentValue -> current = current.left
+  * Case 2: if targetValue > currentValue -> update solution -> current = current.right 
+3. Remove: 
+  * Case 1: if target node is a leaf node, delete
+  * Case 2: if target node has only one child, replace it with its child
+  * **Case 3**: if target node has two node, replace it with the largest element in left tree or the smallest one in right tree, which may have a left or right tree    
+    * 
+2. Insert:  
