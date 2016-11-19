@@ -163,5 +163,7 @@ Optimized algorithm: two times data size (80 Gb I/O) wish O(1) disk seeks.
 # K-elements
 
 1. Binary reduction: 
-* A1 A2 -> A12   A3 A4 -> A34  A12 A34 -> A14
-2. Optimization: 
+  * A1 A2 -> A12   A3 A4 -> A34  A12 A34 -> A14
+  * Time = O(nk log(k))
+2. Optimization: minHeap()  
+  *
