@@ -192,6 +192,17 @@ Optimized algorithm: two times data size (80 Gb I/O) wish O(1) disk seeks.
 3. Remove: 
   * Case 1: if target node is a leaf node, delete
   * Case 2: if target node has only one child, replace it with its child
-  * **Case 3**: if target node has two node, replace it with the largest element in left tree or the smallest one in right tree, which may have a left or right tree    
-    * 
-2. Insert:  
+  * **Case 3**: if target node has two node, replace it with the largest element in left tree or the smallest one in right tree, which may have a left or right tree (**recrusive on this node!**) 
+    ```
+    // On photo
+    // Return type is TreeNode!!
+    ```
+4. Insert:  
+  * Case 1: if targetValue < currentValue -> previous = current -> current = current.left
+  * Case 2: if targetValue > currentValue -> previous = current -> current = current.right
+  * Case 3: if current == null  previous.left(or right) = current
+  
+# DP
+Question on photo
+
+中心开花: 
