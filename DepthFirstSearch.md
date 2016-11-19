@@ -1,6 +1,6 @@
 Why DFS? 
 save space.  
-
+If the tree or map are too deep / have too many layers, it may not be a good option.  
 
 ## Q1: Find all subsets of a set  
 <img width="636" alt="dfs" src="https://cloud.githubusercontent.com/assets/14355257/20113669/5d6554aa-a5bf-11e6-9d60-0299db53d260.png">
