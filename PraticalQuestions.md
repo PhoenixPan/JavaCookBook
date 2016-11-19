@@ -160,3 +160,8 @@ Sort: Read 0.1 Gb each time.
 Optimized algorithm: two times data size (80 Gb I/O) wish O(1) disk seeks.  
   
 
+# K-elements
+
+1. Binary reduction: 
+* A1 A2 -> A12   A3 A4 -> A34  A12 A34 -> A14
+2. Optimization: 
