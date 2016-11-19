@@ -164,7 +164,7 @@ Optimized algorithm: two times data size (80 Gb I/O) wish O(1) disk seeks.
 
 # K-elements
 
-1. Binary reduction: so many I/O (logk) between each stage
+1. Binary reduction: so many I/O (logk) between each stage (if the dataset is too large to be put in memory)
   * A1 A2 -> A12  A3 A4 -> A34  <-1|2->  A12 A34 -> A14
   * Time = O(nk * log(k))
 2. minHeap(): only one I/O for each element (n)   
@@ -207,7 +207,21 @@ Question on photo
 Get the minimum cost  
 中心开花 split from the middle   
 Base case: the shortest piece that cannot be cut
-M[0][1] = 0  
-M[1][2] = 0
-M[2][3] = 0
-M[3][4] = 0
+If size = 1 piece, no cut needed   
+M[0][1] = 0   
+M[1][2] = 0   
+M[2][3] = 0  
+M[3][4] = 0  
+
+If size = 2 pieces, each case has one way to cut   
+M[0][2] =   
+M[1][3] =  
+M[2][4] =  
+
+If size = 3 pieces, each case has two ways to cut   
+M[0][3] =  
+M[1][4] =  
+
+M[0][3]= min(case1, case2) = min(12, 11) = 11  
+
+k = possible cutting places  
