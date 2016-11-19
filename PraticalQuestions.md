@@ -203,6 +203,11 @@ Optimized algorithm: two times data size (80 Gb I/O) wish O(1) disk seeks.
   * Case 3: if current == null  previous.left(or right) = current
   
 # DP
-Question on photo
-
-中心开花: 
+Question on photo  
+Get the minimum cost  
+中心开花 split from the middle   
+Base case: the shortest piece that cannot be cut
+M[0][1] = 0  
+M[1][2] = 0
+M[2][3] = 0
+M[3][4] = 0
