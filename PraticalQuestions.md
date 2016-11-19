@@ -1,5 +1,9 @@
 # Java Heap
 
+
+1. Don't change input!  
+
+
 ## Question 1: Shuffling Cards  
 Spade, heart, square, club  
 
