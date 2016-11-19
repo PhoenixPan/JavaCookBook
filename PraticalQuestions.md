@@ -2,7 +2,9 @@
 
 
 1. Don't change input!  
-
+2. Online: Give a streaming input, if the stream stops, the algorithm should give the correct result of the data up to now  
+3. Offline: Give the entire input and generate the result
+4. Not only look at the time complexity but also unit time spent on each operation (whether it's I/O or memory, efficiency 1:1000)
 
 ## Question 1: Shuffling Cards  
 Spade, heart, square, club  
@@ -162,8 +164,19 @@ Optimized algorithm: two times data size (80 Gb I/O) wish O(1) disk seeks.
 
 # K-elements
 
-1. Binary reduction: 
-  * A1 A2 -> A12   A3 A4 -> A34  A12 A34 -> A14
-  * Time = O(nk log(k))
-2. Optimization: minHeap()  
-  *
+1. Binary reduction: so many I/O (logk) between each stage
+  * A1 A2 -> A12  A3 A4 -> A34  <-1|2->  A12 A34 -> A14
+  * Time = O(nk * log(k))
+2. minHeap(): only one I/O for each element (n)   
+  * check the smallest element of each A, output[n] = Ak[n]
+  * TIme = O(nk^2)
+  * A1 (n times) A2 (n times) A3 (n times) A4 (n times)    output.size = k
+3. Optimized minHeap()
+  * Instead of liner for loop, make it log
+  * Time = O(nk * logk)
+  ```
+  class BetterHeap {
+    int indexWithInArray;     // e.g. = 4 The 5th position in array
+    int indexFromWhichArray;  // e.g. = 3 In array A3
+  }
+  ```
