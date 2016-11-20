@@ -13,9 +13,9 @@
 4. To narrow the scale of E, use "extends" instead of "implements" even for interfaces  
   ```
   public static <E extends comparable<E> E myMthod4() {}
+  ```   
+  If you need to extend a class as well as implement an interface, class should be placed before interface  
   ```  
-  Special case:  
-  ```
   public class MyClass<T extends classB & interfaceC> {}  
   ```  
   http://stackoverflow.com/questions/745756/java-generics-wildcarding-with-multiple-classes
