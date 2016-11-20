@@ -1,7 +1,10 @@
 ##
 
 1. Define a type <E> 
-2. One method can have multiple generic types
+2. One method can have multiple generic types  
+  ```
+  public static <A, B> void myMthod() {}
+  ```
 3. Only represent reference types, not primitive types
 4. Syntax: place before "void"  
   ```
