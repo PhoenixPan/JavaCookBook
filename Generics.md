@@ -1,3 +1,9 @@
+##
+
+1. Define a type <E> 
+2. One method can have multiple generic types
+
+
 ## Example Stack Class
 ```
 public class Stack<E extends Object> {
