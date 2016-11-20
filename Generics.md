@@ -1,19 +1,18 @@
 ##
 
-1. Define a type <E> 
+1. Only represent reference types, not primitive types
 2. One method can have multiple generic types  
   ```
   public static <A, B> void myMthod() {}
   ```
-3. Only represent reference types, not primitive types
-4. Syntax: place before "void"  
+3. Syntax: place before return type  
   ```
-  public static <E> void myMthod() {}
+  public static <E> void myMthod2() {}
+  public static <E> E myMthod3() {}
   ```  
-5. Hi
 
 
-## Example Stack Class
+## Example generic Stack Class
 ```
 public class Stack<E extends Object> {
 
