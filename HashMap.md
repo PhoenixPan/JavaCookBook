@@ -46,8 +46,7 @@ public class SortTest {
 
 }
 ```
-
-
+  
 If you're only interested in the keys, you can iterate through the keySet() of the map:
 ```
 Map<String, Object> map = ...;
