@@ -10,7 +10,12 @@
   public static <E> void myMthod2() {}
   public static <E> E myMthod3() {}
   ```  
-
+4. To narrow the scale of E, use "extends" instead of "implements" even for interfaces  
+  ```
+  public static <E extends comparable<E> E myMthod4() {}
+  ```
+  http://stackoverflow.com/questions/745756/java-generics-wildcarding-with-multiple-classes
+  
 
 ## Example generic Stack Class
 ```
