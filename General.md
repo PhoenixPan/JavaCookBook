@@ -8,6 +8,8 @@ System.arraycopy(w, k * 7, currentKey, 0, 7);
 ObjectType@Address  
 
 ## Graph
+#### Check visited node!!
+
 Directed: |E| = |V|^2  
 Undirected: |E| = |V|*(|V|-1)/2 + |V|  
 Equal matrix: G(i,j) = G(j,i)  
