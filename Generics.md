@@ -20,6 +20,7 @@
   ```  
   http://stackoverflow.com/questions/745756/java-generics-wildcarding-with-multiple-classes
   
+## Practice: Implement HashMap  
 
 ## Example generic Stack Class
 ```
