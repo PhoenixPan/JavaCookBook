@@ -13,7 +13,11 @@
 4. To narrow the scale of E, use "extends" instead of "implements" even for interfaces  
   ```
   public static <E extends comparable<E> E myMthod4() {}
+  ```  
+  Special case:  
   ```
+  public class MyClass<T extends classB & interfaceC> {}  
+  ```  
   http://stackoverflow.com/questions/745756/java-generics-wildcarding-with-multiple-classes
   
 
