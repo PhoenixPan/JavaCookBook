@@ -37,3 +37,42 @@ Time: O(n) Space:O(1)
 #### Q: Remove leading and duplicated spaces
 input = "___abc__ed__ef__"  
 output = "abc_ed_ef"  
+Principle: (WBegin)(_W)(_W)...(_W)(_WEnd)
+Slow/fast pointer  
+```
+		int fast = 0;
+		int slow = 0;
+		int wordCount = 0;
+		String s = "   abc  ed  ef  ";
+
+		while (true) {
+			while (fast < s.length() && s.charAt(fast) == ' ')
+				fast++;
+			if (fast == s.length())
+				break;
+        
+      // Is this step necessary? 
+			if (wordCount > 0)
+//				s.charAt(slow++) = ' ';
+			while (fast < s.length() && s.charAt(fast) != ' ')
+//				s.charAt(slow++) = slow[fast++];
+			wordCount++;
+		}
+```
+
+#### Q:Deduplication  
+input = "aaaabbb_cc"
+same thought as before, but slow will include the current element, as we need at least one copy  
+
+```
+```
+
+#### Q: Deduplication repeatedly: abbbbaz -> aaz -> z
+What structure to use when we need to look back history? Stack
+```
+```
+
+#### Q:Substring finding
+
+```
+```
