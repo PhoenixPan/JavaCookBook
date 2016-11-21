@@ -73,6 +73,16 @@ What structure to use when we need to look back history? Stack
 ```
 
 #### Q:Substring finding
+Regular  
+```
+for (int i = 0; i <= s1.length()-s2.length();i++)
+  for (int j = 0l j <s2.length(); j++)
+    if (s1.charAt(i+j)!=s2.charAt(j)
+      break
+  if (j = s2.length())
+    return i
+  return -1
+```
+Time:O(m*n)
 
-```
-```
+#### Rabin-Karp
