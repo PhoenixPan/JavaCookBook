@@ -1,15 +1,16 @@
 # HashTable(HashMap)
 Wikipedia: https://en.wikipedia.org/wiki/Hash_table   
-  
-1. Space, search, insert, delete: average time complexiy is O(1), worst O(n), due to hash collision.  
-2. Collision resolution: endanger the efficiency of hashtable when the number of buckets are small.  
+
+1. Load factor should be kept in a reasonable range. If it's too large, the efficiency of the map will dreases; If it's too small, it wastes memory 
+2. Space, search, insert, delete: average time complexiy is O(1), worst O(n), due to hash collision 
+3. Collision resolution: endanger the efficiency of hashtable when the number of buckets are small
   * Separate chaining:   
   Insert: O(1) with a known tail pointer  
   Insert: O(n) if we need to check duplication  
   Delete: O(n)  
   * Open addressing: worst case O(n) when the table is almost full  
   
-3. Difference between HashMap and HashTable in Java
+4. Difference between HashMap and HashTable in Java
   * HashTable is thread safe whereas HashMap is not but the result is that HashTable has a much lower performance
   * HashTable does not allow null key
 
@@ -26,15 +27,15 @@ Step 3: Time complexity: O(n) + O(nlogk) = O(nlogk), k = minHeap.size()
 ## Q: Find a missing number from 1 to n in an unsorted array. Time complexy: O(n)   
 Solution 1: Sort and iterate.  Time: O(nlogn) Space:O(1)  
 Solution 2: HashMap. Time: O(n) Space:O(n)  
-Solution 3: Get sum. (1+n)n/2 - sum.  等差数列. Time: O(n) O(1). May cause overflow is the sum is too large.  
-Solution 4: XOR. For loop (each element with n), if the result is not 0, that's the missing number. Time: O(n) Space:O(1).  
+Solution 3: Get sum. (1+n)n/2 - sum.  等差数列. Time: O(n) O(1). May cause overflow is the sum is too large 
+Solution 4: XOR. For loop (each element with n), if the result is not 0, that's the missing number. Time: O(n) Space:O(1)
 
 ## Q3: Find common numbers between two sorted arrays  
 **Assumption**: Integers? Duplication? Size of array? 
 
 1. Solution 1: if n ~ m, two pointers. Time: O(m+n) Space:O(1)
 2. Solution 2: if n <<< m
-  * binary search in array b[m]. Time: O(n log(m)) perform n times binary searches.  
+  * binary search in array b[m]. Time: O(n log(m)) perform n times binary searches
   * HashSet: put a[n] into HashSet (smaller to save space). Time: O(m+n) Space: O(min(n, m))
 
 
