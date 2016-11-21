@@ -2,13 +2,14 @@
 Wikipedia: https://en.wikipedia.org/wiki/Hash_table   
   
 1. Space, search, insert, delete: average time complexiy is O(1), worst O(n), due to hash collision.  
-2. Collision resolution:  
+2. Collision resolution: endanger the efficiency of hashtable when the number of buckets are small.  
   * Separate chaining:   
-    Insert complexity: O(1) with a known tail pointer  
-    Insert complexity: O(n) if we need to check duplication  
-    Delete: O(n)  
-  * Open addressing:  
-    
+  Insert: O(1) with a known tail pointer  
+  Insert: O(n) if we need to check duplication  
+  Delete: O(n)  
+  * Open addressing: worst case O(n) when the table is almost full  
+  
+3. _Difference between HashMap and HashTable in Java.  
 
 
 Sort an HashMap using its value  
