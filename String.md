@@ -53,9 +53,9 @@ Slow/fast pointer
         
       // Is this step necessary? 
 			if (wordCount > 0)
-//				s.charAt(slow++) = ' ';
+//				s.charAt(slow++) = ' '; // String is immutable in Java, to char[]
 			while (fast < s.length() && s.charAt(fast) != ' ')
-//				s.charAt(slow++) = slow[fast++];
+//				s.charAt(slow++) = slow[fast++];  // String is immutable in Java, to char[]
 			wordCount++;
 		}
 ```
