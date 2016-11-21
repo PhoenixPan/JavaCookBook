@@ -1,3 +1,12 @@
+# HashTable(HashMap)
+Wikipedia: https://en.wikipedia.org/wiki/Hash_table  
+1. Space, search, insert, delete: average time complexiy is O(1), worst O(n), due to hash collision.  
+2. Collision resolution: 
+    separate chaining: 
+      Insert complexity: O(1) with a known tail pointer
+    
+
+
 Sort an HashMap using its value  
 ```
 import java.util.Collections;
