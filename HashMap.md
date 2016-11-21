@@ -2,14 +2,14 @@
 Wikipedia: https://en.wikipedia.org/wiki/Hash_table   
 
 1. Load factor should be kept in a reasonable range. If it's too large, the efficiency of the map will dreases; If it's too small, it wastes memory 
-2. Space, search, insert, delete: average time complexiy is O(1), worst O(n), due to hash collision 
+2. Space, search, insert, delete: average time complexiy is O(1), worst O(n), due to hash collision
 3. Collision resolution: endanger the efficiency of hashtable when the number of buckets are small
-  * Separate chaining:   
+  * Separate chaining(closed addressing/open hashing): Use a structure (LinkedList) to deal with small number of elements. If the number of elements in each bucket is too large, the hashing function needs to be fixed.    
   Insert: O(1) with a known tail pointer  
   Insert: O(n) if we need to check duplication  
   Delete: O(n)  
-  * Open addressing: worst case O(n) when the table is almost full  
-  
+  * Open addressing/closed hashing: worst case O(n) when the table is almost full  
+  * When to use which one? Open addressing is better used for hash tables with small records that can be stored within the table (internal storage). If the table is expected to have a high load factor, the records are large, or the data is variable-sized, chained hash tables often perform as well or better.
 4. Difference between HashMap and HashTable in Java
   * HashTable is thread safe whereas HashMap is not but the result is that HashTable has a much lower performance
   * HashTable does not allow null key
