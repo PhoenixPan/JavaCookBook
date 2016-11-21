@@ -9,8 +9,9 @@ Wikipedia: https://en.wikipedia.org/wiki/Hash_table
   Delete: O(n)  
   * Open addressing: worst case O(n) when the table is almost full  
   
-3. ??? Difference between HashMap and HashTable in Java.  
-4. 
+3. Difference between HashMap and HashTable in Java
+  * HashTable is thread safe whereas HashMap is not but the result is that HashTable has a much lower performance
+  * HashTable does not allow null key
 
 
 ## Q: Find top N most frequent words.
