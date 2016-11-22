@@ -26,7 +26,8 @@ Find target = 17
 2. Hash set (no need to look back)  
 HashSet = {-5, 6, 12}  
 exist? + target = current // Does this have a solution? if so, 17 exists  
-Time, Space: O(n)  
+Time, Space: O(n)
+
 ### Q2.3
 Find the max sum in the tree  
 Three: -5 2 11 6 14: 11 + 14 = 25  
