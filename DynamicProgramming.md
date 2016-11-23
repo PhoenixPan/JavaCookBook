@@ -40,6 +40,11 @@ rob
 Input: "bobcatrob"  
 case 1: no cut, check "bo" from the dict  
 case 2: b: 左大段[1] tells you whether it is true or false   右小段 manual check from dict  
+Record prefix  
+
+## Q2: P
+## Q3: Cut rope: Maximal Produt when Cutting Rope
+Give a rope with integer length n, how to cut the rope into m integer length parts with length p[0], p[1], ..., p[m-1] in order to get the maximal product of p[0] * p[1] * ... * p[m-1]? m is determined by you and must be greater than 0 (at least one cut must be made)  
 
 
 
