@@ -30,7 +30,8 @@ if (max.update) // If update, change solutionStart/End
 int solutionStart = 0;
 int solutionEnd = 0;
 ```
-
+  
+  
 # Cut something
 ## Q1: Dictionary Word Problem
 For an arbitary input, can it be made up by using the words in the dictionary?
