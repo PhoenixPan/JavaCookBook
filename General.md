@@ -35,3 +35,15 @@ For directed:
   How expensive it is to compute the in degree of a node?  
     Adjacency Matrix O(V)   
     Adjacency List O(V+E)    
+
+## Finally
+Always return z  
+```
+try {
+  return x;
+} catch () {
+  return y;
+} finally {
+  return z;
+}
+```
