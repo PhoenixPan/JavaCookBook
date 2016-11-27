@@ -47,3 +47,33 @@ try {
   return z;
 }
 ```
+## Enum
+Basic   
+```
+class Card {
+  private enum suit {SPADE, HEART, DIAMOND, CLUB}
+  private final int num;  // Use 1 to 13 represent A to K
+  private String color;
+}
+```
+Assign:  
+```
+public enum NewsFeed {
+  Site1("http");
+  Site2("http");
+  Site3("http");
+}
+
+private String url;
+private NewsFeed(String rss) {
+  this.url = rss;
+}
+
+public String getUrl() {
+  return this.url;
+}
+
+public String getNews() {
+  System.out.println(NewsFeed.Site1.getUrl());
+};
+```
