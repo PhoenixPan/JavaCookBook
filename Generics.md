@@ -1,5 +1,4 @@
-##
-
+# Generics
 1. Only represent reference types, not primitive types
 2. One method can have multiple generic types  
   ```
