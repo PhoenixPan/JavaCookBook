@@ -18,4 +18,15 @@ Differences between static and non-static classes?
 7. Why do we prefer static nested class? inner classes require instances, which consume a lot of resources when the amount is large.  
 
 ## Local Class
-Can be created even in a method and to be used immediately. When the program quits the method, the class vanishes as well.  
+Can be created even in a method and to be used immediately. When the program quits the method, the class vanishes as well.   
+
+## Anonymous
+Create an instance without a class name.  
+```
+new Thread(new Runnable() {
+  @Override
+  public void run() {
+    // do something
+  }
+}).start;
+```
