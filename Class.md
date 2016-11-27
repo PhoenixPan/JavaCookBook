@@ -13,5 +13,6 @@ Differences between static and non-static classes?
 6. An inner class instance cannot be created without an instance of outer class.  
   ```
   OuterClass outer = new OuterClass();
-  OuterClass.InnerClass inner = outer.new InnerClass();
+  OuterClass.InnerClass inner = new OuterClass.InnerClass();
   ```
+7. Why do we prefer static nested class? inner classes require instances, which consume a lot of resources when the amount is large.  
