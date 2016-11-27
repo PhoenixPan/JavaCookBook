@@ -1,3 +1,16 @@
+# Iterator
+next()  
+hasNext()  
+remove(): An optional operation, remove the last element returned by this iterator.    
+```
+String text = it.next();
+it.remove();
+```
+##### ListIterator(Java)
+Lies between two elements, can either iterate next() or previous()  
+### Write a tree iterator
+
+
 # HashTable(HashMap)
 Wikipedia: https://en.wikipedia.org/wiki/Hash_table   
 
