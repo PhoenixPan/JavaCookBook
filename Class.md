@@ -9,6 +9,9 @@ Differences between static and non-static classes?
 3. 
 4. 
 
+## Helper Class
+Non-public top-level class, usually used to support the public class.   
+
 ## Nested Class
 1. A class within the body of another class or interface, either static or non-static.  
 2. **Inner class/Member class**: Non-static nested class.  
