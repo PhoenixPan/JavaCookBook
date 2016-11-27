@@ -6,13 +6,13 @@ remove(): An optional operation, remove the last element returned by this iterat
 String text = it.next();
 it.remove();
 ```
-Avoid: list.get(i) might be very slow (O(n))
+Avoid: list.get(i) might be very slow: O(n)  
 ```
 for(int i = 0; i< list.size(); i++) {
   System.out.println(list.get(i));
 }
 ```
-Encourage: list must implement iterable 
+Encourage: list must implement iterable, so you are using iterator, which is usually not O(n)  
 ```
 for(Integer i : list) {
 }
