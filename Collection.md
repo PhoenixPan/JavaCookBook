@@ -1,4 +1,4 @@
-# Iterator
+## Iterator
 next()  
 hasNext()  
 remove(): An optional operation, remove the last element returned by this iterator.    
@@ -6,8 +6,20 @@ remove(): An optional operation, remove the last element returned by this iterat
 String text = it.next();
 it.remove();
 ```
+Avoid: list.get(i) might be very slow (O(n))
+```
+for(int i = 0; i< list.size(); i++) {
+  System.out.println(list.get(i));
+}
+```
+Encourage: list must implement iterable 
+```
+for(Integer i : list) {
+}
+```
+
 ##### ListIterator(Java)
-Lies between two elements, can either iterate next() or previous()  
+Lies between two elements, can either go next() or previous(), returns the value it travels through.    
 ### Write a tree iterator
 
 
