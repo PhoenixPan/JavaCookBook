@@ -3,6 +3,10 @@
 2. Usually more efficient than recursion (such as in Fibonacci)
 3. Induction rule
 
+## Fibonacci
+Recursive: Time:O(2^n); Space:O(n); Too slow because of duplicated calculation.  
+Dynamic: 
+
 # Type One
 1. Calculate MAX or MIN using a group of original data
 2. Linear scan and look back to the previous elements
