@@ -1,11 +1,13 @@
 # Basic
-1. Define the meaning of each element and then fill up the entire structure (bottom-up or top-down)
-2. Usually more efficient than recursion (such as in Fibonacci)
+1. Using smaller element and then fill up the entire structure (bottom-up or top-down)
+2. Usually more efficient than recursion (such as in Fibonacci) which does not record anything
 3. Induction rule
 
 ## Fibonacci
-Recursive: Time:O(2^n); Space:O(n); Too slow because of duplicated calculation.  
-Dynamic: 
+Recursive: Time:O(2^n); Space:O(n); Too slow because of duplicated calculation.
+Dynamic: Time:O(n); Space:O(2); 
+
+##### Bottleneck of von Neumann architecture
 
 # Type One
 1. Calculate MAX or MIN using a group of original data
