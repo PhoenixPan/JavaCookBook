@@ -3,12 +3,13 @@
   Recursion: Does not record steps in the middle (top-down)
 2. Usually more efficient than recursion (such as in Fibonacci) which does not record anything
 3. Induction rule
+4. Relieve the bottleneck of von Neumann architecture
+5. N-dimension DP: data can be stored in a N-dimension data structure (array, list, etc.)
 
 ## Fibonacci
 Recursive: Time:O(2^n); Space:O(n); Too slow because of duplicated calculation.
 Dynamic: Time:O(n); Space:O(2); 
 
-##### Bottleneck of von Neumann architecture
 
 # Type One
 1. Calculate MAX or MIN using a group of original data
