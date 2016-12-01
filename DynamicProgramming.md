@@ -1,5 +1,6 @@
-# Basic
-1. Using smaller element and then fill up the entire structure (bottom-up or top-down)
+# Dynamic Programming
+1. DP: Using smaller element and then fill up the entire structure (bottom-up or top-down)
+  Recursion, which does not record steps in the middle (top-down)
 2. Usually more efficient than recursion (such as in Fibonacci) which does not record anything
 3. Induction rule
 
