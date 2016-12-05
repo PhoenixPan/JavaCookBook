@@ -28,5 +28,5 @@ int[] array  -> {0,0,0} length=3
 
 
 ##### 2D array  
-![2darray](https://cloud.githubusercontent.com/assets/14355257/20873582/d0c7bc28-ba76-11e6-9063-e3a12746f98b.png)
+![2darray](https://cloud.githubusercontent.com/assets/14355257/20873582/d0c7bc28-ba76-11e6-9063-e3a12746f98b.png =250x150)
                
