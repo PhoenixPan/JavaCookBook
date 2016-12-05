@@ -6,7 +6,8 @@ stack        heap
 Jack  -> name = "Jack"  
 
 primitive defined locally (such as within methods) goes to stack.  
-primitive defined as a part of an object goes to heap.  
+primitive defined as a part of an object goes to heap.  
+static variable goes to heap.  
 
 # Array
 1. Occupies consecutive memory  
