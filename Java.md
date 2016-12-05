@@ -5,6 +5,9 @@ heap: dynamic elements, such as new object 动态分配的object(new出来的)
 stack        heap  
 Jack  -> name = "Jack"  
 
+primitive defined locally (such as within methods) goes to stack.  
+primitive defined as a part of an object goes to heap.  
+
 # Array
 1. Occupies consecutive memory  
 2. Can access elements via index in O(1) time  
