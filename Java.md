@@ -1,7 +1,7 @@
 # Stack and Heap
 In Java, memory comprised of stack and heap.  
 stack: local variables 当前执行状态  
-heap: dynamic elements, such as new object 动态分配的object(new出来的)     
+heap: dynamic elements, such as new object 动态分配（程序在运行时分配的内存）的object(new出来的)     
 stack        heap  
 Jack  -> name = "Jack"  
 
