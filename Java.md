@@ -29,5 +29,5 @@ int[] array  -> {0,0,0} length=3
 
 ##### 2D array  
 Not necessary consecutive between dimensions  
-<img src="https://cloud.githubusercontent.com/assets/14355257/20873582/d0c7bc28-ba76-11e6-9063-e3a12746f98b.png" width="200" height="250" />
+<img src="https://cloud.githubusercontent.com/assets/14355257/20873582/d0c7bc28-ba76-11e6-9063-e3a12746f98b.png" width="225" height="300" />
                
