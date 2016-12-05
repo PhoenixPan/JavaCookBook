@@ -15,3 +15,10 @@ array = new int[] {1,2,3};
 // Invalid
 array = {1,2,3};
 ```
+
+```
+// Valid
+int[][] 2darray = new int[5][]
+// Invalid
+int[][] 2darray = new int[][]
+```
