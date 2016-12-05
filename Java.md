@@ -22,3 +22,8 @@ int[][] 2darray = new int[5][]
 // Invalid
 int[][] 2darray = new int[][]
 ```
+stack                heap        
+int[] array  -> {0,0,0} length=3    
+             point to  
+             
+               
