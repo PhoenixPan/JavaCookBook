@@ -2,9 +2,10 @@
 In Java, memory comprised of stack and heap.  
 stack: local variables 当前执行状态  
 heap: dynamic elements, such as new object 动态分配（程序在运行时分配的内存）的object(new出来的)     
-stack        heap  
-Jack  -> name = "Jack"  
+stack        heap   
+Jack  -> name = "Jack"   
 
+##### Where are they?
 primitive defined locally (such as within methods) goes to stack.  
 primitive defined as a part of an object goes to heap.  
 static variable goes to heap.  
