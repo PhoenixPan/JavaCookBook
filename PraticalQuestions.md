@@ -9,7 +9,7 @@
   
 2. Object implements comparator interface (compare). Dfine the order of objects using user-identified rules. Can be used to modify the comparison of some Java-defined class.  
   
-  ```
+  ```
   PriorityQueue<E> minHeap = new PriorityQueue(size, new Comparator<E>())
   ```
   
