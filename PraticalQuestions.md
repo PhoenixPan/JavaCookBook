@@ -1,5 +1,9 @@
-# Java Heap
+# Java PriorityQueue
+1. Object implements comparable interface (define the natural order)  
 
+
+
+# Java Heap
 
 1. Don't change input!  
 2. Online: Give a streaming input, if the stream stops, the algorithm should give the correct result of the data up to now  
