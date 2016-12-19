@@ -1,6 +1,10 @@
 # Java PriorityQueue
-1. Object implements comparable interface (compareTo)(define the natural order)(natural order: defined by comparable)   
-2. Object implements comparator interface (compare)(define the order of objects using user-identified rules)   
+1. Object implements comparable interface (compareTo). Define the natural order (the order defined by comparable).   
+  ```
+  PriorityQueue<E> minHeap = new PriorityQueue()
+  PriorityQueue<E> maxHeap = new PriorityQueue(size, Collections.reverseOrder()) // Can only reverse natural order
+  ```
+2. Object implements comparator interface (compare). Dfine the order of objects using user-identified rules.  
   ```
   PriorityQueue<E> minHeap = new PriorityQueue(size, new Comparator())
   ```
