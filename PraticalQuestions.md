@@ -1,6 +1,7 @@
 # Java PriorityQueue
 1. Object implements comparable interface (define the natural order)  
-
+2. Object implements comparator interface (define the order of objects using user-identified rules)  
+3. 
 
 
 # Java Heap
