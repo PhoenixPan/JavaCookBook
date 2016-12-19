@@ -16,6 +16,25 @@
 3. When comparator is provided, the order is decided by the comparator rather than the comprable  
 4. Initial size > 0, IllegalArgumentException
 
+## Question 1: Top N
+maxHeap, minHeap, quickSort, what is the difference?   
+Online or offline?  
+(Memory: store only the k elements)  
+
+minHeap: good for small dataset  
+maxHeap: more elements  (photo with red words)  
+
+## Question 2: Top n in a sorted matrix
+```
+12345
+23456
+34567
+.....
+```
+Best first search (priority queue): code see photo (2 pages)   
+Breath first search (queue)   
+
+
 
 
 # Java Heap
