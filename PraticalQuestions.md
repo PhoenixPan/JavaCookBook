@@ -7,7 +7,7 @@
   PriorityQueue<E> maxHeap = new PriorityQueue(size, Collections.reverseOrder()) // Can only reverse the natural order  
   ```
   
-2. Object implements comparator interface (compare). Dfine the order of objects using user-identified rules. Can be used to modify the comparison of some Java-defined class.  
+2. Object implements comparator interface (compare). Dfine the order of objects using user-identified rules. Be used to modify the comparison of some Java-defined class as a makeup for comparable.  
   
   ```
   PriorityQueue<E> minHeap = new PriorityQueue(size, new Comparator<E>())
