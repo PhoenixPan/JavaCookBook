@@ -9,7 +9,9 @@
   ```
   PriorityQueue<E> minHeap = new PriorityQueue(size, new Comparator<E>())
   ```
-3. When comparator is provided, the order is decided by the comparator rather than the comprable.  
+3. When comparator is provided, the order is decided by the comparator rather than the comprable  
+4. Initial size > 0, IllegalArgumentException
+
 
 
 # Java Heap
