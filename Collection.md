@@ -51,8 +51,8 @@ Step 3: Time complexity: O(n) + O(nlogk) = O(nlogk), k = minHeap.size()
 
 ## Q: Find a missing number from 1 to n in an unsorted array. Time complexy: O(n)   
 Solution 1: Sort and iterate.  Time: O(nlogn) Space:O(1)  
-Solution 2: HashMap. Time: O(n) Space:O(n)  
-Solution 3: Get sum. (1+n)n/2 - sum.  等差数列. Time: O(n) O(1). May cause overflow is the sum is too large 
+Solution 2: HashMap. Time: O(n) Space:O(n). Con: Space occupation
+Solution 3: Get sum. Sum (1+n)n/2 - RealSum.  等差数列. Time: O(n) O(1). Con: May cause overflow is the sum is too large.
 Solution 4: XOR. For loop (each element with n), if the result is not 0, that's the missing number. Time: O(n) Space:O(1)
 
 ## Q3: Find common numbers between two sorted arrays  
