@@ -29,3 +29,10 @@ For directed:
 * How expensive it is to compute the in degree of a node?  
   * Adjacency Matrix O(V)   
   * Adjacency List O(V+E)    
+
+# Breadth-First Search (BFS)
+
+
+
+
+# Depth-First Search (DFS)
