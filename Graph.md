@@ -35,7 +35,17 @@ For directed:
 2. is not for the shortest distance
 
 # Best First Search (BFS)
-1. Dijkstra: find the shortest node from a single node to any other node in the graph
+## Dijkstra
+Find the shortest node from a single node to any other node in the graph  
+
+### Q1
+Given a matrix of size NxN and for each row and each column the elements are sorted in ascending order. How to find the Nth smallest element in it?  
+12345  
+23456  
+34567  
+45678  
+56789  
+
 
 
 # Depth-First Search (DFS)
