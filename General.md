@@ -14,8 +14,8 @@ Directed: |E| = |V|^2
 Undirected: |E| = |V|*(|V|-1)/2 + |V|  
 Equal matrix: G(i,j) = G(j,i)  
 
-For both directed and undirected:  
-  Speace Complexity   
+For both directed and undirected:  
+* Speace Complexity    
     Adjacency Matrix O(V^2)   
     Adjacency List O(V+E)  
     Which one is better for sparse?  
