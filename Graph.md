@@ -1,5 +1,6 @@
 ## Graph
-#### Check visited node!!
+
+#### Notice: Check visited node!!
 
 Directed: |E| = |V|^2  
 Undirected: |E| = |V|*(|V|-1)/2 + |V|  
