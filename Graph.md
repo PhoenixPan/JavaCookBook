@@ -31,8 +31,11 @@ For directed:
   * Adjacency List O(V+E)    
 
 # Breadth-First Search (BFS)
+1. zig-zag
+2. is not for the shortest distance
 
-
+# Best First Search (BFS)
+1. Dijkstra: find the shortest node from a single node to any other node in the graph
 
 
 # Depth-First Search (DFS)
