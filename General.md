@@ -39,7 +39,7 @@ For directed:
   * Adjacency List O(V+E)    
 
 ## Finally
-Always return z  
+The method will always return z  
 ```
 try {
   return x;
@@ -61,9 +61,9 @@ class Card {
 Assign:  
 ```
 public enum NewsFeed {
-  Site1("http");
-  Site2("http");
-  Site3("http");
+  Site1("http://a");
+  Site2("http://b");
+  Site3("http://c");
 }
 
 private String url;
