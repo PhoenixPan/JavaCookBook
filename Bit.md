@@ -1,24 +1,26 @@
 # Bit representation and operations
-
-1 and 0: true or false  
-8 bit = 1 byte
-
+  
+1 and 0: true or false   
+8 bit = 1 byte  
+  
 int index = 1;  
 0000 0000 0000 0000 0000 0000 0000 0000 0001  
-
+  
 int has 4 bytes = 32 bits.  
 The first digit is sign bit (positive or negative).  
 Therefore, the maximum number we can represent is:   
 [sign] 2^0 + 2^1 + 2^2 + ... + 2^29 + 2^30   
 Totally, the limit of int is 2^31  
 
+
 ## Ordinary binary representation(源码表示法):    
 A leading 1 means the number is negative otherwise positive.  
 "+1" 0000 0000 0000 0000 0000 0000 0000 0000 0001   
 "-1" 1000 0000 0000 0000 0000 0000 0000 0000 0001   
-However it is not good! Why? because we will have a positive zero and a negative zero! 
+However it is not good! Why? because we will have a positive zero and a negative zero!  
 "+0" 0000 0000 0000 0000 0000 0000 0000 0000 0000   
 "-0" 1000 0000 0000 0000 0000 0000 0000 0000 0000   
+
 
 ## Two's complement(补码表示法):  
 Positive numbers are the same as ordinary binary, only negative number has two's complement, whose value is the flip of positive number then plus one.  
@@ -44,7 +46,7 @@ overflow, no negative 0
 ##### (2)
 2^31-1:  0111 1111 1111 1111 1111 1111 1111 1111 1111 (the largest positive)  
 -2^31+1: 1000 0000 0000 0000 0000 0000 0000 0000 0001 (corresponding largest negative)  
--2^31:   1000 0000 0000 0000 0000 0000 0000 0000 0000  (the additional negative number)  
+-2^31:   1000 0000 0000 0000 0000 0000 0000 0000 0000 (the additional negative number)  
 ![minimum](https://cloud.githubusercontent.com/assets/14355257/20159085/7c3d3382-a6ac-11e6-8db7-728e722cadf9.png)  
 
 
