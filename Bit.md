@@ -15,29 +15,29 @@ Totally, the limit of int is 2^31
 
 ## Ordinary binary representation(源码表示法):    
 A leading 1 means the number is negative otherwise positive.  
-"+1" 0000 0000 0000 0000 0000 0000 0000 0000 0001   
+"+1" 0000 0000 0000 0000 0000 0000 0000 0000 0001  
 "-1" 1000 0000 0000 0000 0000 0000 0000 0000 0001   
 However it is not good! Why? because we will have a positive zero and a negative zero!  
-"+0" 0000 0000 0000 0000 0000 0000 0000 0000 0000   
-"-0" 1000 0000 0000 0000 0000 0000 0000 0000 0000   
+"+0" 0000 0000 0000 0000 0000 0000 0000 0000 0000  
+"-0" 1000 0000 0000 0000 0000 0000 0000 0000 0000  
 
 
 ## Two's complement(补码表示法):  
 Positive numbers are the same as ordinary binary, only negative number has two's complement, whose value is the flip of positive number then plus one.  
 
 ### Beginning example 1
-0000 0101  (binary 5)  
-↓ flip  
-1111 1010  (one's completement of 5)  
+0000 0101  (binary 5)  
+↓ flip  
+1111 1010  (one's completement of 5)   
 ↓ add one  
 1111 1011  (two's completement of -5)  
 
 ### Beginning example 2
 0000 0000 (0)  
-↓ flip  
+↓ flip  
 1111 1111 (0)  
 ↓ add one  
-overflow, no negative 0  
+overflow, no negative 0   
 
 ### int range[-2^31, 2^31-1: Why negative has one more value?  
 ##### (1)
@@ -47,11 +47,12 @@ overflow, no negative 0
 2^31-1:  0111 1111 1111 1111 1111 1111 1111 1111 1111 (the largest positive)  
 -2^31+1: 1000 0000 0000 0000 0000 0000 0000 0000 0001 (corresponding largest negative)  
 -2^31:   1000 0000 0000 0000 0000 0000 0000 0000 0000 (the additional negative number)  
+
 ![minimum](https://cloud.githubusercontent.com/assets/14355257/20159085/7c3d3382-a6ac-11e6-8db7-728e722cadf9.png)  
 
 
-11000011 && 10101010? 10000010: only 1 && 1 = 1  
-11000011 || 10101010? 11101011:      x || 0 = x  
+11000011 && 10101010? 10000010 - x && x = x    
+11000011 || 10101010? 11101011 - x || 0 = x  
 
 ## Left shift (<<)  
 int a = 10000001  
