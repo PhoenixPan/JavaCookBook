@@ -13,8 +13,8 @@ Therefore, the maximum number we can represent is:
 Totally, the limit of int is 2^31  
 
 
-## Ordinary binary representation(源码表示法):    
-A leading 1 means the number is negative otherwise positive.  
+## Ordinary binary representation:
+源码表示法: A leading 1 means the number is negative otherwise positive.  
 "+1" 0000 0000 0000 0000 0000 0000 0000 0000 0001  
 "-1" 1000 0000 0000 0000 0000 0000 0000 0000 0001   
 However it is not good! Why? because we will have a positive zero and a negative zero!  
@@ -22,8 +22,8 @@ However it is not good! Why? because we will have a positive zero and a negative
 "-0" 1000 0000 0000 0000 0000 0000 0000 0000 0000  
 
 
-## Two's complement(补码表示法):  
-Positive numbers are the same as ordinary binary, only negative number has two's complement, whose value is the flip of positive number then plus one.  
+## Two's complement:  
+补码表示法: Positive numbers are the same as ordinary binary, only negative number has two's complement, whose value is the flip of positive number then plus one.  
 
 ### Beginning example 1
 0000 0101  (binary 5)  
@@ -73,7 +73,7 @@ Fill the new digit with sign bit
 ## Unsigned right shift (>>>)  
 move right and append a 0 at left, ignore sign bit  
 a >>> 1  
-Notice: for this operation, the bit sign will be counted towards a regular bit, which may make a negative number a huge positive integer  
+Notice: for this operation, the bit sign will be counted towards a regular bit, which may make a negative number a positive integer  
 
 ## How to use?  
 use an integer to replace an array of booleans to represent situation:  
@@ -82,7 +82,8 @@ Three situations?
 Use two bits to represent three (more than two) situation:    
 1 2 3 -> 00 01 10   
 
-##### 1.Given a number x, how to set x's k-th bit to 1?  
+## Practice Questions
+### 1.Given a number x, how to set x's k-th bit to 1?  
 xxxx Kxxx  
 0000 1000  
 temp = temp ^ k  
@@ -91,7 +92,7 @@ int change(int x, int k) {
     return x | (1<<k);    
 }
 ```
-##### 2.Given a number x, how to set x's k-th bit to 0?  
+### 2.Given a number x, how to set x's k-th bit to 0?  
 xxxx Kxxx  
 1111 0111  (~0000 1000， invert)
 temp = 2^n - 2^k  
@@ -101,9 +102,9 @@ int change(int x, int k) {
     return x & (~(1<<k));    
 }
 ```
-##### 3. How to verify whether a number is power of two (n>=0)? 
+### 3. How to verify whether a number is power of two (n>=0)? 
 x   = 00001000 has only one 1  
 x-1 = 00000111   
 return (x & (x - 1) == 0 && x != 0)
 
-##### 4. Whether letters in a word is unique?  
+### 4. Whether letters in a word is unique?  
