@@ -79,3 +79,15 @@ public String getNews() {
   System.out.println(NewsFeed.Site1.getUrl());
 };
 ```
+## Declaration Order
+1. The order of methods doesn't matter.  
+2. The order of variables matter.
+
+  ```
+  //error: cannot find symbol
+  int sum = 0;
+  int a = 5;
+  sum = a + b;
+  int b = 6;
+  System.out.println(sum);
+  ```
