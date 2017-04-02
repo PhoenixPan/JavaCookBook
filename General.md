@@ -95,3 +95,8 @@ public String getNews() {
 
 
 ##### Protected: same package + subclasses from other packages. Less than Public, more than default.
+
+
+1. Final class cannot be extended
+2. Final methods cannot be overridden
+3. Final variable cannot be re-assigned
