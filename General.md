@@ -1,4 +1,4 @@
-##Copy an array
+## Copy an array
 ```
 BigInteger[] currentKey = new BigInteger[7];
 System.arraycopy(w, k * 7, currentKey, 0, 7);
@@ -91,3 +91,7 @@ public String getNews() {
   int b = 6;
   System.out.println(sum);
   ```
+
+
+
+##### Protected: same package + subclasses from other packages. Less than Public, more than default.
