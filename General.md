@@ -1,3 +1,11 @@
+## Compile and run from cmd
+1. Set environment variable JAVA_HOME of JDK location and add path %JAVA_HOME%\bin
+2. Compile and execute .java with extra jar
+ ```
+ javac -cp .;h:\app\lib\mysql-connector-java-5.1.41-bin.jar Test.java
+ java -cp .;h:\app\lib\mysql-connector-java-5.1.41-bin.jar Test
+ ```
+
 ## Copy an array
 ```
 BigInteger[] currentKey = new BigInteger[7];
