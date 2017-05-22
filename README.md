@@ -1,6 +1,5 @@
 # JavaCookbook
 
-## By topic:
 - [Class](#Class)  
 - [Generics](#Generics)  
 - [Pass-by-value or pass-by-reference](#PassBy)   
@@ -19,10 +18,10 @@ Differences between static and non-static classes?
 3. 
 4. 
 
-### Helper Class
+#### Helper Class
 Non-public top-level class, usually used to support the public class.   
 
-### Nested Class
+#### Nested Class
 1. A class within the body of another class or interface, either static or non-static.
   
   ```
@@ -46,10 +45,10 @@ Non-public top-level class, usually used to support the public class.
 7. Why do we prefer static nested class? inner classes require instances, which consume a lot of resources when the amount is large.  
 8. Nested class can access private members of outer class.  
 
-### Local Class
+#### Local Class
 Can be created even in a method and to be used immediately. When the program quits the method, the class vanishes as well.   
 
-### Anonymous Class
+#### Anonymous Class
 Create an instance without a class name.  
 ```
 new Thread(new Runnable() {
@@ -82,9 +81,9 @@ new Thread(new Runnable() {
   ```  
   http://stackoverflow.com/questions/745756/java-generics-wildcarding-with-multiple-classes
   
-##### Practice: Implement HashMap  
+#### Practice: Implement HashMap  
 
-##### Example generic Stack Class
+#### Example generic Stack Class
 ```
 public class Stack<E extends Object> {
 
@@ -172,7 +171,7 @@ list.set(0, john);
 ```
 <a id="ComparableAndComparator"></a> 
 ## Comparable and Comparator
-### Comparable
+#### Comparable
 ```
 public class ComparableDemo implements Comparable<ComparableDemo> {
 	
@@ -190,7 +189,7 @@ public class ComparableDemo implements Comparable<ComparableDemo> {
 }
 ```
 
-### Comparator
+#### Comparator
 
 ```
 import java.util.*;
@@ -264,7 +263,7 @@ public class ComparatorDemo {
 ```
 <a id="hashCode&equals"></a> 
 ## hashCode(), equals(), and == 
-1. hashCode(): Default implementation: return an integer representing a *memory address*. Return a different hash code for distinct objects. After override a hashCode() function, you can still get the original hash code by invoking:  
+1. hashCode(): return an integer representing a memory address - different hash codes for distinct objects. After override a hashCode() function, you can still get the original hash code by invoking:  
 	```
 	int originalHashCode = System.identityHashCode(myObject);
 	```
@@ -276,16 +275,30 @@ public class ComparatorDemo {
 	    return (this == obj);
 	}
 	```
+	Two differences:  
+	1. equals() may throw a NullPointerException whereas == will not  
+		```
+		if (nothing == Suit.CLUB);      // runs fine
+		if (nothing.equals(Suit.CLUB)); // throws NullPointerException
+		```
+	2. == is subject to type compatibility check at compile time
+		```
+		if (Suit.CLUB.equals(Rank.KING)); // compiles fine
+		if (Suit.CLUB == Rank.KING);      // doesn't complie, incompatible types!
+		```
 
-3. ==: Returns true **if and only if** both variables refer to the same object, if their references are one and the same
+3. ==: Returns true **if and only if** both variables refer to the **same object**, if their references are one and the same
 
-### Contract
-You must override hashCode() in every class that overrides equals(). Failure to do so will result in a violation of the general contract for Object.hashCode(), which will prevent your class from functioning properly in conjunction with all hash-based collections, including HashMap, HashSet, and Hashtable.  
+#### [General contract of hashCode](https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#hashCode())
+**You must override hashCode() as well if you overrides equals().**  
 
-If **one.equals(two)**, **one.hashCode** must equal to **two.hashCode**   
-If one.hashCode = two.hashCode, it is **not necessary** that one.equals(two)   
+Failure to do so will result in a violation of the general contract for Object.hashCode(), which will prevent your class from functioning properly in conjunction with all hash-based collections, including HashMap, HashSet, and Hashtable.  
 
-### Why
+If one.equals(two), one.hashCode() **must equal to** two.hashCode();   
+If one.hashCode = two.hashCode, it is **not necessary** that one.equals(two); 
+However, it is suggested to have distince hash codes for distinct objects for better hash performance.  
+
+#### Why
 Hashing retrieval is a two-step process.  
 1. Find the right bucket (using hashCode())  
 2. Search the bucket for the right element (using equals() )  
@@ -301,7 +314,7 @@ Student s2 = new Student("John", 18);
 s1.hashCode() != s2.hashCode();
 ```
 
-### HashSet example
+#### HashSet example
 HashSet checks equality based on equals() method  
 ```
 	public static void main(String[] args) {
