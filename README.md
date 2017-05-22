@@ -302,6 +302,18 @@ If one.hashCode = two.hashCode, it is **not necessary** that one.equals(two);
 However, it is suggested to have distince hash codes for distinct objects for better hash performance.  
 
 #### Why
+Every object has a unique hash code by default.  
+Hash collections or maps locate objects through their hash codes.  
+If we only override `equals()`, two objects that we consider the same are not the same in a hash collection, because of different hash code. This causes great confusion and mistakes, such as: 
+```
+// By Java default:  
+Student s1 = new Student("John", 18);
+Student s2 = new Student("John", 18);
+s1.hashCode() != s2.hashCode();
+```
+
+
+#### Explained
 **If we only override `equals()`**
 Java will hash objects to different buckets if their hash codes are different. If hashCode() is not overriden, the actually the same objects will be hashed to the different bucket. This causes great confusion when you try to find an object, since HashMap.get() uses hash code to find an object. 
 ```
@@ -330,12 +342,6 @@ Hashing retrieval is a two-step process.
 2. Search the bucket for the right element (using equals() )  
 
 #### Example
-By Java default:  
-```
-Student s1 = new Student("John", 18);
-Student s2 = new Student("John", 18);
-s1.hashCode() != s2.hashCode();
-```
 Implement your own `hashCode()` function:  
 ```
 public static void main(String[] args) {
