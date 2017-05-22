@@ -263,7 +263,10 @@ public class ComparatorDemo {
 ```
 <a id="hashCode&equals"></a> 
 ## hashCode(), equals(), and == 
-1. hashCode(): return an integer representing a memory address - different hash codes for distinct objects. After override a hashCode() function, you can still get the original hash code by invoking:  
+1. hashCode():
+	1. Return an integer representing a memory address - different hash codes for distinct objects. 
+	2. Each object should have a unique hash code and the collision chance is something like 1 / 2^32 (hash code is a 32 bit integer). 
+	3. After override a hashCode() function, you can still get the original hash code by invoking:  
 	```
 	int originalHashCode = System.identityHashCode(myObject);
 	```
@@ -290,7 +293,7 @@ public class ComparatorDemo {
 3. ==: Returns true **if and only if** both variables refer to the **same object**, if their references are one and the same
 
 #### [General contract of hashCode](https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#hashCode())
-**You must override hashCode() as well if you overrides equals().**  
+**You must override hashCode() if you overrides equals().**  
 
 Failure to do so will result in a violation of the general contract for Object.hashCode(), which will prevent your class from functioning properly in conjunction with all hash-based collections, including HashMap, HashSet, and Hashtable.  
 
@@ -299,87 +302,59 @@ If one.hashCode = two.hashCode, it is **not necessary** that one.equals(two);
 However, it is suggested to have distince hash codes for distinct objects for better hash performance.  
 
 #### Why
+**If we only override `equals()`**
+Java will hash objects to different buckets if their hash codes are different. If hashCode() is not overriden, the actually the same objects will be hashed to the different bucket. This causes great confusion when you try to find an object, since HashMap.get() uses hash code to find an object. 
+```
+// Java implementation of HashMap.get() 
+public V get(Object key) {
+	if (key == null)
+		return getForNullKey();
+	int hash = hash(key.hashCode());
+	for (Entry<K,V> e = table[indexFor(hash, table.length)]; e != null; e = e.next) {
+		Object k;
+		if (e.hash == hash && ((k = e.key) == key || key.equals(k)))
+		return e.value;
+	}
+	return null;
+}
+```
+
+**If we only override `hashCode()`** and make two inputs have the same hash code, the second input will override the first one even if they are not equal. However, it is a valid solution for some problems. 
+```
+myMap.put(first,someValue) // will not be found
+myMap.put(second,someValue)
+```
+
 Hashing retrieval is a two-step process.  
 1. Find the right bucket (using hashCode())  
 2. Search the bucket for the right element (using equals() )  
 
-When using a hash-based Collection or Map such as HashSet, LinkedHashSet, HashMap, Hashtable, or WeakHashMap, make sure that the hashCode() of the key objects that you put into the collection never changes while the object is in the collection. The bulletproof way to ensure this is to make your keys immutable, which has also other benefits.  
-
-You may have the same hash code for different objects after your implementation, 
-
+#### Example
+By Java default:  
 ```
-// This is true in default implementation  
 Student s1 = new Student("John", 18);
 Student s2 = new Student("John", 18);
 s1.hashCode() != s2.hashCode();
 ```
+Implement your own `hashCode()` function:  
+```
+public static void main(String[] args) {
+	Emp employee1 = new Emp(23);
+	Emp employee2 = new Emp(24);
+	Emp employee3 = new Emp(25);
 
-#### HashSet example
-HashSet checks equality based on equals() method  
-```
-	public static void main(String[] args) {
-		Emp emp1 = new Emp(23);
-		Emp emp2 = new Emp(24);
-		Emp emp3 = new Emp(25);
-		Emp emp4 = new Emp(26);
-		Emp emp5 = new Emp(27);
-		
-		HashSet<Emp> hs = new HashSet<Emp>();
-		hs.add(emp1);
-		hs.add(emp2);
-		hs.add(emp3);
-		hs.add(emp4);
-		hs.add(emp5);
-		
-		Emp unwanted = new Emp(24);
-		hs.add(unwanted);
-		
-		System.out.println("HashSet Size--->>>"+hs.size());
-		System.out.println("hs.contains( new Emp(25))--->>>"+hs.contains(new Emp(25)));
-		System.out.println("hs.remove( new Emp(24)--->>>"+hs.remove(new Emp(24)));
-		System.out.println("Now HashSet Size--->>>"+hs.size());
-		Iterator itr = hs.iterator();
-		int count = 0;
-		while  (itr.hasNext()) {
-			itr.next();
-			count++;
-		}
-		System.out.println(count);
-      }
-```
-```
-class Emp 
-{
-	private int age ;
-	
-	public Emp( int age )
-	{
-		super();
-		this.age = age;
+	HashSet<Emp> hs = new HashSet<Emp>();
+	hs.add(employee1);
+	hs.add(employee2);
+	hs.add(employee3);
+
+	Emp unwanted = new Emp(25);
+	hs.add(unwanted);
+
+	System.out.println(hs.size()); // 3 if hashCode() is overriden, otherwise 4
+	System.out.println(hs.contains(employee3)); // true if hashCode() is overriden, otherwise false
 	}
-	
-	public int hashCode()
-	{
-		return age;
-	}
-	
-	// Critical to hash functions
-//	public boolean equals( Object obj )
-//	{
-//		boolean flag = false;
-//		Emp emp = ( Emp )obj;
-//		if( emp.age == age )
-//			flag = true;
-//		return flag;
-//	}
-	
 }
 ```
-We have 
-```
-HashSet Size--->>>6
-hs.contains( new Emp(25))--->>>false
-hs.remove( new Emp(24)--->>>false
-Now HashSet Size--->>>6
-```
+When using a hash-based Collection or Map, make sure that the hashCode() of the key objects that you put into the collection never changes while the object is in the collection. 
 
