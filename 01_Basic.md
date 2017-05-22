@@ -46,47 +46,43 @@ For directed:
   * Adjacency Matrix O(V)   
   * Adjacency List O(V+E)    
 
-## Finally
-The method will always return z  
-```
-try {
-  return x;
-} catch () {
-  return y;
-} finally {
-  return z;
-}
-```
 ## Enum
-Basic   
+A fixed set of constants, such as months, states, and cards:   
 ```
-class Card {
-  private enum suit {SPADE, HEART, DIAMOND, CLUB}
-  private final int num;  // Use 1 to 13 represent A to K
-  private String color;
+pubic class Card {
+  private enum Suit {SPADE, HEART, DIAMOND, CLUB;}
+  public static void main(String[] args) {
+    System.out.println(Suit.CLUB); // Show "CLUB"
+  } 
 }
+// Or declare here
 ```
-Assign:  
+(enum types must not be local)  
+
+
 ```
-public enum NewsFeed {
-  Site1("http://a");
-  Site2("http://b");
-  Site3("http://c");
+public class News {
+  public static void main(String[] args) {
+    System.out.println(NewsFeed.SITE1.getUrl());
+  }
 }
 
-private String url;
-private NewsFeed(String rss) {
-  this.url = rss;
+enum NewsFeed {
+  SITE1("http://www.test1.com"),
+  SITE2("http://www.test2.com"),
+  SITE3("http://www.test3.com"); // notice: "," and ";"
+  
+  private String url; 
+  
+  private NewsFeed(String url) {
+    this.url = url;  // "this" could be "SITE1", "SITE2", or "SITE3" 
+  }
+  public String getUrl() { // url getter. If url is public then we don't need it
+    return this.url;
+  }
 }
-
-public String getUrl() {
-  return this.url;
-}
-
-public String getNews() {
-  System.out.println(NewsFeed.Site1.getUrl());
-};
 ```
+
 ## Declaration Order
 1. The order of methods doesn't matter.  
 2. The order of variables matter.
@@ -102,9 +98,7 @@ public String getNews() {
 
 
 
-##### Protected: same package + subclasses from other packages. Less than Public, more than default.
-
-
+#### Protected: same package + subclasses from other packages. Less than Public, more than default.
 1. Final class cannot be extended
 2. Final methods cannot be overridden
 3. Final variable cannot be re-assigned
