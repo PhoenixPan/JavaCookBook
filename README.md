@@ -5,7 +5,7 @@
 - [Generics](#Generics)  
 - [Pass-by-value or pass-by-reference](#PassBy)   
 - [Comparable and Comparator](#ComparableAndComparator)  
-- [hashCode() & equals()](#hashCode&equals)  
+- [hashCode(), equals(), and ==](#hashCode&equals)  
 
 <a id="Class"></a>  
 ## Class
@@ -263,24 +263,21 @@ public class ComparatorDemo {
 }
 ```
 <a id="hashCode&equals"></a> 
-## hashCode() & equals() functions 
-### .hashCode()
-Default implementation: return an integer representing a *memory address*  
-Return a different hash code for distinct objects  
-After override a hashCode() function, you can still get the original hash code by invoking:  
-```
-int originalHashCode = System.identityHashCode(myObject);
-```
+## hashCode(), equals(), and == 
+1. hashCode(): Default implementation: return an integer representing a *memory address*. Return a different hash code for distinct objects. After override a hashCode() function, you can still get the original hash code by invoking:  
+	```
+	int originalHashCode = System.identityHashCode(myObject);
+	```
 
-### .equals(Object o)
-```
-public boolean equals(Object obj) {
-    return (this == obj);
-}
-```
+2. equals(Object o): is essentially ==:  
+	```
+	// Java default implementation
+	public boolean equals(Object obj) {
+	    return (this == obj);
+	}
+	```
 
-### Double equal signs: ==  
-Returns true if and only if both variables refer to the same object, if their references are one and the same.
+3. ==: Returns true **if and only if** both variables refer to the same object, if their references are one and the same
 
 ### Contract
 You must override hashCode() in every class that overrides equals(). Failure to do so will result in a violation of the general contract for Object.hashCode(), which will prevent your class from functioning properly in conjunction with all hash-based collections, including HashMap, HashSet, and Hashtable.  
