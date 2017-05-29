@@ -9,13 +9,13 @@
 
 <a id="Calculation"></a>  
 ## Calculation
-### Double
+#### Double
 1. Keep one decimal point by default 
 
-### Operator
+#### Operator
 &（与运算） and &&（短路与运算）: && will **skip** the right side if left side alone can decide the result. Same for | and ||.  
 
-### Type casting
+#### Type casting
 Overflow:  
 ```
 int a = 50;
@@ -30,6 +30,9 @@ int a = 2147483647;
 int b = 1;
 int c = a + b // -2147483648, error
 ```
+
+
+
 
 <a id="Class"></a>  
 ## Class
@@ -83,6 +86,7 @@ new Thread(new Runnable() {
   }
 }).start;
 ```
+
 
 <a id="Generics"></a> 
 ## Generics
@@ -388,4 +392,19 @@ public static void main(String[] args) {
 }
 ```
 When using a hash-based Collection or Map, make sure that the hashCode() of the key objects that you put into the collection never changes while the object is in the collection. 
+
+
+### Static
+1. 静态方法只能访问静态成员（变量&函数），但静态成员可以被一般方法访问；因为静态成员先于对象建立，而String name存在于对象中(非static)，此时若取其值则结果为空，系统报错	
+2. 静态方法中不可使用this或super关键字，因为没有对象只有类名，无所指
+
+### Override
+1. Override注意事项：子类覆盖父类时，子类权限必须大于等于父类（public>protected>default>private）
+2. 若父类成员被private修饰，则不存在override，而是hide，因为子类本就无法直接获取
+3. 使用super.method() 获得父类的方法
+
+## Inherit
+1. 子类构造函数的第一行有隐藏的super()，用于调用父类的空参数的构造函数（继承的实际方式，每次新建都会），以获得初始化值，所以父类没有空构造函数Class0{}时，需指定一个空构造函数，否则报错
+2. super()语句必须在子类构造函数的第一行，因为要先完成父类的初始化
+3. 子类构造函数中如果使用了this()调用了本类构造函数 ，那么隐藏的super()就没有了，因为super和this都只能在第一行
 
