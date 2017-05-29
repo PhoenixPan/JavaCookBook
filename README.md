@@ -408,3 +408,35 @@ When using a hash-based Collection or Map, make sure that the hashCode() of the 
 2. super()语句必须在子类构造函数的第一行，因为要先完成父类的初始化
 3. 子类构造函数中如果使用了this()调用了本类构造函数 ，那么隐藏的super()就没有了，因为super和this都只能在第一行
 
+```
+Person person = new Person("John"); // Name: John
+```
+```
+class Person {
+	String name;
+	int age;
+	
+	Person() {
+		// this();  // default
+        	// this("Default", 30); // cause infinite loop
+		System.out.println("Created");
+	}
+	;
+	Person(String name) {
+		// this();  // doesn't exist
+		this.name = name;
+		System.out.println("Name:" + name);
+	}
+	
+	Person(String name, int age) {
+		this(name);  // omitted by default  
+		this.age = age;
+		System.out.println("Age:" + age);
+	}
+}
+```
+
+## Interface
+1. interface中成员的修饰符是固定的，通常包括全局常量public static final 和 抽象方法public abstract
+2. 接口不可实例化，只能由实现了接口的子类在覆盖其中所有的方法后，该子类才可实例化，否则该子类是个抽象类
+3. 多继承在java中就是多实现： 虽然一个类仅可继承一个类，但其可实现多个接口，避免了单继承的局限性
