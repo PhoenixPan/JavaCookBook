@@ -1,10 +1,35 @@
 # JavaCookbook
 
+- [Calculation](#Calculation)  
 - [Class](#Class)  
 - [Generics](#Generics)  
 - [Pass-by-value or pass-by-reference](#PassBy)   
 - [Comparable and Comparator](#ComparableAndComparator)  
 - [hashCode(), equals(), and ==](#hashCode&equals)  
+
+<a id="Calculation"></a>  
+## Calculation
+### Double
+1. Keep one decimal point by default 
+
+### Operator
+&（与运算） and &&（短路与运算）: && will **skip** the right side if left side alone can decide the result. Same for | and ||.  
+
+### Type casting
+Overflow:  
+```
+int a = 50;
+int b = 50;
+byte c = (byte)(a + b) // 100, correct
+
+int a = 128;
+int b = 1;
+byte c = (byte)(a + b) // -128, error
+
+int a = 2147483647;
+int b = 1;
+int c = a + b // -2147483648, error
+```
 
 <a id="Class"></a>  
 ## Class
