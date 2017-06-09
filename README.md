@@ -6,7 +6,8 @@
 - [Pass-by-value or pass-by-reference](#PassBy)   
 - [Comparable and Comparator](#ComparableAndComparator)  
 - [hashCode(), equals(), and ==](#hashCode&equals)  
-- [Pattern and Matcher]
+- [Pattern and Matcher](#Pattern&Matcher)
+- [Read files](#Reader)
 
 <a id="Calculation"></a>  
 ## Calculation
@@ -442,6 +443,7 @@ class Person {
 2. 接口不可实例化，只能由实现了接口的子类在覆盖其中所有的方法后，该子类才可实例化，否则该子类是个抽象类
 3. 多继承在java中就是多实现： 虽然一个类仅可继承一个类，但其可实现多个接口，避免了单继承的局限性
 
+<a id="Pattern&Matcher"></a>
 ## Pattern and Matcher
 Example: find lines that have both "cloud" and "computing" with no leading or following characters.
 ```
@@ -470,7 +472,7 @@ try (BufferedReader input = new BufferedReader(new InputStreamReader(new FileInp
 	System.exit(3);
 }
 ```
-
+<a id="Reader"></a>
 ## Read files
 **FileReader** and **FileWriter** read streams of characters, for text files  
 **InputStream(FileInputStream)** and **OutputStream(FileOutputStream)** read streams of raw bytes, for binary files 
