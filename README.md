@@ -6,6 +6,7 @@
 - [Pass-by-value or pass-by-reference](#PassBy)   
 - [Comparable and Comparator](#ComparableAndComparator)  
 - [hashCode(), equals(), and ==](#hashCode&equals)  
+- [Pattern and Matcher]
 
 <a id="Calculation"></a>  
 ## Calculation
@@ -440,3 +441,44 @@ class Person {
 1. interface中成员的修饰符是固定的，通常包括全局常量public static final 和 抽象方法public abstract
 2. 接口不可实例化，只能由实现了接口的子类在覆盖其中所有的方法后，该子类才可实例化，否则该子类是个抽象类
 3. 多继承在java中就是多实现： 虽然一个类仅可继承一个类，但其可实现多个接口，避免了单继承的局限性
+
+## Pattern and Matcher
+Example: find lines that have both "cloud" and "computing" with no leading or following characters.
+```
+String pt = "([^a-zA-Z]*cloud[^a-zA-Z]*)[^a-zA-Z]*computing[^a-zA-Z]*";
+Pattern pt = Pattern.compile(pt, Pattern.CASE_INSENSITIVE); 
+
+try (BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(sourceFile)));) {
+	//Read all lines and increment "count" each time a line fits the pattern
+	while ((rawLine = input.readLine()) != null) {
+		//Use matcher to filter
+		Matcher matcher = pt.matcher(rawLine);
+		if (matcher.find()) {		
+			System.out.println(rawLine);
+			count++;
+		}
+	}
+	//Print the result
+	System.out.println(count);
+
+} catch (EOFException eof) {
+	System.out.println("EOFException detected");
+	System.exit(2);
+
+} catch (IOException io) {
+	System.out.println("Error");
+	System.exit(3);
+}
+```
+
+## Read files
+**FileReader** and **FileWriter** read streams of characters, for text files  
+**InputStream(FileInputStream)** and **OutputStream(FileOutputStream)** read streams of raw bytes, for binary files 
+**InputStreamReader** reads bytes and decodes them into characters, used outside of FileInputStream to read characters/strings
+**BufferedReader** wrapped around Readers, like FileReader, to buffer the input and improve efficiency  
+
+Example:
+```
+BufferedReader input = new BufferedReader(new FileReader(sourceFile));
+BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(sourceFile)));
+```
