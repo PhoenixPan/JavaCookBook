@@ -11,7 +11,8 @@
 ### Ordinary binary representation 源码表示法
 The leading 1 tells the number is negative  
 "+1" 0000 0000 0000 0000 0000 0000 0000 0000 0001  
-"-1" 1000 0000 0000 0000 0000 0000 0000 0000 0001   
+"-1" 1000 0000 0000 0000 0000 0000 0000 0000 0001  
+
 However it is not good! Why? because we will have a positive zero and a negative zero!  
 "+0" 0000 0000 0000 0000 0000 0000 0000 0000 0000  
 "-0" 1000 0000 0000 0000 0000 0000 0000 0000 0000  
@@ -46,83 +47,90 @@ overflow, no negative 0
 ![minimum](https://cloud.githubusercontent.com/assets/14355257/20159085/7c3d3382-a6ac-11e6-8db7-728e722cadf9.png)  
 
 ### Summary
-[+1] = [00000001]原码 = [00000001]反码 = [00000001]补码  
-[-1] = [10000001]原码 = [11111110]反码 = [11111111]补码  
+[+1] = [0000 0001]原码 = [0000 0001]反码 = [0000 0001]补码  
+[-1] = [1000 0001]原码 = [1111 1110]反码 = [1111 1111]补码  
 
+One's and Two's complement are not for humans to calculate. We usually need to change it back to original binary to calculate them. 
 
-References: 
+##### References:  
 https://www.cnblogs.com/zhangziqiu/archive/2011/03/30/ComputerCode.html  
+http://blog.csdn.net/morewindows/article/details/7354571  
 
 ## Bit operations
 Only for integers, not float or double.  
 
-11000011 && 10101010? 10000010 - x && x = x    
-11000011 || 10101010? 11101011 - x || 0 = x  
+Operator | Name | Result
+--- | --- | ---
+& | AND 与 | 0101 & 0110 = 0100
+\| | OR 或 | 0101 \| 0110 = 0111
+^ | XOR 异或 | 0101 ^ 0110 = 1100
+~ | NOT 取反 | ~1000 = 0111
 
-## Left shift (<<) 
+
+### Left shift (<<) 
 Simply move left and append 0s at right, 补零  
 
 int | 15 | -15 
 --- | --- | --- 
-Original | 00001111 | 10001111
-One's | 00001111 | 11110000
-Two's | 00001111 | 11110001
-<< 2 | 00111100 | 11000100
-One's | 00111100 | 11000011
-Original | 00111100 | 10111100
+Original | 0000 1111 | 1000 1111
+One's | 0000 1111 | 1111 0000
+Two's | 0000 1111 | 1111 0001
+<< 2 | 0011 1100 | 1100 0100
+One's | 0011 1100 | 1100 0011
+Original | 0011 1100 | 1011 1100
 int | 60 | -60
 
-## Right shift (>>)  
+### Right shift (>>)  
 Move right and append sign bit at left, 算术移位的高位是补符号位
 
 int | 15 | -15 
 --- | --- | --- 
-Original | 00001111 | 10001111
-One's | 00001111 | 11110000
-Two's | 00001111 | 11110001
->> 2 | 00000011 | 11111100
-One's | 00000011 | 11111011
-Original | 00000011 | 10000100
+Original | 0000 1111 | 1000 1111
+One's | 0000 1111 | 1111 0000
+Two's | 0000 1111 | 1111 0001
+\>> 2 | 0000 0011 | 1111 1100
+One's | 0000 0011 | 1111 1011
+Original | 0000 0011 | 1000 0100
 int | 3 | -4
 
-## Unsigned right shift (>>>)  
-move right and append a 0 at left, ignore sign bit, 逻辑移位的高位补0
-a >>> 1  
-Notice: for this operation, the bit sign will be counted towards a regular bit, which may make a negative number a positive integer  
+### Unsigned right shift (>>>)  
+Move right and append a 0 at left, ignore sign bit, 逻辑移位的高位补0  
+Notice: for this operation, the bit sign will be counted towards a regular bit, which may make a negative number a positive integer 
 
-# Question: What if I changed the sign after the shift? 
-Fill the new digit with sign bit  
 
-## How to use?  
-use an integer to replace an array of booleans to represent situation:  
-true true false false -> 1 1 0 0    
-Three situations?   
-Use two bits to represent three (more than two) situation:    
-1 2 3 -> 00 01 10   
+## Practice
+### Q1.How to determine an integer i is an odd number?  
+Odd: XXXX XXX1 & 0000 0001 = 0000 0001 = 1  
+Even: XXXX XXX0 & 0000 0001 = 0000 0000 = 0  
+(true = 1, false = 0)  
+```
+return (i & 1) == 1? true : false
+```  
 
-## Practice Questions
-### 1.Given a number x, how to set x's k-th bit to 1?  
-xxxx Kxxx  
-0000 1000  
-temp = temp ^ k  
+### Q2.Given a number x, how to set x's k-th bit to 1?  
 ```
 int change(int x, int k) {
     return x | (1<<k);    
 }
 ```
-### 2.Given a number x, how to set x's k-th bit to 0?  
-xxxx Kxxx  
-1111 0111  (~0000 1000， invert)
-temp = 2^n - 2^k  
-~ 
-```
-int change(int x, int k) {
-    return x & (~(1<<k));    
-}
-```
-### 3. How to verify whether a number is power of two (n>=0)? 
-x   = 00001000 has only one 1  
-x-1 = 00000111   
-return (x & (x - 1) == 0 && x != 0)
 
-### 4. Whether letters in a word is unique?  
+### Q3.How to verify whether a number is power of two (n>=0)? 
+int x = 0000 1000 has only one 1  
+x-1 = 0000 0111   
+```
+return (x & (x - 1) == 0 && x != 0)
+```
+
+### Q4.Whether letters in a word is unique?  
+//
+
+### Other applications  
+Use an integer to replace an array of booleans to represent situation:   
+true true false false -> 1 1 0 0    
+Three situations?   
+Use two bits to represent three (more than two) situation:  
+1 2 3 -> 00 01 10   
+
+
+##### References:  
+http://blog.csdn.net/morewindows/article/details/7354571
