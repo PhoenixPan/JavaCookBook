@@ -104,13 +104,15 @@ new Thread(new Runnable() {
   ```  
 4. To narrow the scale of E, use "extends" instead of "implements" even for interfaces  
   ```
-  public static <E extends comparable<E> E myMthod4() {}
+  public static <E extends comparable<E>> E myMthod4() {}
   ```   
   If you need to extend a class as well as implement an interface, class should be placed before interface  
   ```  
   public class MyClass<T extends classB & interfaceC> {}  
   ```  
   http://stackoverflow.com/questions/745756/java-generics-wildcarding-with-multiple-classes
+5. Java does not allow us to declare generic arrays, so we have to do casting, as a result, type check as well.
+  `Item[] a = (Item[]) new Object[size];`
   
 #### Practice: Implement HashMap  
 
